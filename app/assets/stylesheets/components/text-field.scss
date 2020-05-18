@@ -1,0 +1,41 @@
+.text-field {
+  width: 100%;
+}
+
+.text-field__label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: $spacing-extra-tight;
+}
+
+.text-field__input {
+  width: 100%;
+  font-size: 14px;
+  border-radius: $border-radius;
+  border: 1px solid $color-border;
+  padding: 10px;
+  transition: box-shadow 100ms ease-out;
+
+  @include form-focus-ring;
+}
+
+.text-field--error {
+  .text-field__label {
+    color: $color-red;
+  }
+
+  .text-field__input {
+    border-color: $color-red;
+  }
+}
+
+.text-field__error-message {
+  color: $color-red;
+  margin-top: $spacing-tight;
+}
+
+.text-field__help-text {
+  color: $color-text-subdued;
+  margin-top: $spacing-tight;
+}

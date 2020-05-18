@@ -1,0 +1,42 @@
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.page__container {
+  flex: 1 1 100%;
+  min-width: 0;
+  max-width: $page-max-width;
+  padding: $spacing 0;
+  margin: 0 $spacing;
+}
+
+.page__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing;
+}
+
+.page__title {
+  font-size: 18px;
+  font-weight: 700;
+  flex: 1 1 100%;
+  margin: 0;
+}
+
+.page__action {
+  flex: 0 0 auto;
+}
+
+.page__content {
+  > * + * {
+    margin-top: $spacing-tight;
+  }
+}
+
+.page__actions {
+  margin-top: $spacing-tight;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

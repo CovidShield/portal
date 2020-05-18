@@ -1,0 +1,45 @@
+name: portal
+
+type: rails
+
+up:
+  - homebrew:
+      - mysql-client@5.7:
+          or: [mysql@5.7]
+          conflicts: [mysql-connector-c, mysql, mysql-client]
+  - ruby: 2.7.1
+  - node:
+      version: v10.19.0
+      yarn: 1.22.4
+  - bundler
+  - railgun
+  - database:
+      bootstrap: bin/rails db:create db:migrate db:schema:load
+      migrate: bin/rails db:migrate db:test:prepare
+      host: portal.railgun
+      user: root
+      password: ""
+      database: portal_development
+
+server:
+  port: 18335
+
+commands:
+  console: bin/rails console
+  test:
+    syntax:
+      argument: file
+      optional: args...
+    run: bin/rails test
+
+env:
+  KEY_CLAIM_TOKEN: test
+  KEY_CLAIM_HOST: covidshield-submit.myshopify.io
+
+# These use fuzzy-matching, so you can (e.g.) `dev open app`
+open:
+  "portal": https://portal.myshopify.io
+  #ops:
+  # - https://datadog.link
+  # - https://bugsnag.link
+  # - https://kafka.link

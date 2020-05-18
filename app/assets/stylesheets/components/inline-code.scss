@@ -1,0 +1,10 @@
+.inline-code {
+  font-family: $font-family;
+  color: $color-pink;
+  background-color: $color-background;
+  border: 1px solid $color-border;
+  border-radius: $border-radius;
+  padding: 2px $spacing-extra-tight;
+  margin: 0 2px;
+  white-space: pre;
+}

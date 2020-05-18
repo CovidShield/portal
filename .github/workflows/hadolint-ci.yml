@@ -1,0 +1,12 @@
+name: Lint Dockerfile
+on: [push, pull_request]
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      # To use this repository's private action, you must check out _this_ repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Lint Dockerfile
+        uses: Shopify/gh-action-hadolint@master

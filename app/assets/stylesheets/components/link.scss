@@ -1,0 +1,22 @@
+.link {
+  color: $color-blue;
+  text-decoration: none;
+  transition: box-shadow 100ms ease-out;
+  border-radius: $border-radius;
+  padding: 2px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited,
+  &:active {
+    color: $color-blue;
+  }
+
+  + .link {
+    margin-left: $spacing;
+  }
+
+  @include action-focus-ring;
+}

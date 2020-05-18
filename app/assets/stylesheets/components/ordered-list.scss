@@ -1,0 +1,29 @@
+.ordered-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: ordered-list-counter;
+}
+
+.ordered-list__item {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  counter-increment: ordered-list-counter;
+
+  &::before {
+    content: counter(ordered-list-counter) ". ";
+    color: $color-text;
+    font-weight: bold;
+    margin-right: $spacing;
+  }
+
+  + .ordered-list__item {
+    margin-top: $spacing-tight;
+  }
+}
+
+.ordered-list__item-content {
+  width: 100%;
+  min-width: 0;
+}

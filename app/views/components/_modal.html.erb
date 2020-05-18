@@ -1,0 +1,28 @@
+<div class="modal-backdrop" id="<%= id %>">
+  <div
+    class="modal"
+    aria-labelledby="modal-title"
+    role="dialog"
+    tabIndex="-1"
+  >
+    <div class="modal__header">
+      <h2 id="modal-title" class="modal__title">
+        <%= title %>
+      </h2>
+      <button
+        type="button"
+        class="modal__close-button"
+        aria-label="Close modal"
+        data-modal-close
+      >
+        <svg class="modal__close-icon"><use xlink:href="#close" /></svg>
+      </button>
+    </div>
+    <div class="modal__body">
+      <%= yield %>
+    </div>
+    <div class="modal__footer">
+      <button class="button" type="button" data-modal-close>Close</Button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.help__activator {
+  height: 20px;
+  width: 20px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  display: inline-block;
+  vertical-align: -4px;
+  border-radius: 10px;
+  transition: box-shadow 100ms ease-out;
+
+  @include action-focus-ring;
+}

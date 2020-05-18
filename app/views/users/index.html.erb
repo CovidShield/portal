@@ -1,0 +1,48 @@
+<div class="page">
+  <div class="page__container">
+    <div class="page__header">
+      <h1 class="page__title"><%= t('users_index.title') %></h1>
+      <div class="page__action">
+        <%= link_to t('users_index.add'), new_user_path, class: 'button button--primary' %>
+      </div>
+    </div>
+    <div class="page__content">
+      <div class="index">
+        <table class="index__table">
+          <thead class="index__header">
+            <tr>
+              <th class="index__heading"><%= t('username') %></th>
+              <th class="index__heading"><%= t('permissions') %></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @users.each do |user| %>
+              <tr class="index__row">
+                <td class="index__cell"><%= user.username %></td>
+                <td class="index__cell">
+                  <% if user.admin %>
+                    <%= t('admin') %>
+                  <% else %>
+                    <%= t('staff') %>
+                  <% end %>
+                </td>
+                <td class="index__cell" width="1">
+                  <% if user != current_user %>
+                    <%= link_to t('users_index.edit'), edit_user_path(user), class: 'link' %>
+                  <% end %>
+                </td>
+                <td class="index__cell" width="1">
+                  <% if user != current_user %>
+                    <%= link_to t('users_index.remove'), user, class: 'link', method: :delete, data: { confirm: t('users_index.confirm_delete') } %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
