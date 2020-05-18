@@ -1,0 +1,34 @@
+.index {
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-large;
+  overflow-x: auto;
+}
+
+.index__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.index__header {
+  border-bottom: 1px solid $color-border;
+}
+
+.index__heading {
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+  padding: $spacing-tight $spacing;
+}
+
+.index__row + .index__row {
+  border-top: 1px solid $color-border;
+}
+
+.index__cell {
+  padding: $spacing-tight $spacing;
+}
+
+.index__cell--align-right {
+  text-align: right;
+}

@@ -1,0 +1,39 @@
+# Run ./bootstrap.sh before running `docker-compose up`
+
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./tmp/mysql:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "portal"
+      MYSQL_USER: "portal"
+      MYSQL_PASSWORD: "portal"
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-u $$MYSQL_USER", "--password=$$MYSQL_PASSWORD"]
+      timeout: 20s
+      retries: 10
+  portal:
+    build: .
+    #volumes:
+      #- .:/app
+    environment:
+      RAILS_ENV: production
+      RAILS_MASTER_KEY: db0bda6c389e83e57d30c0f1f5f09a6b
+      DATABASE_URL: "mysql2://portal:portal@mysql:3306/portal"
+      KEY_CLAIM_HOST: covidshield-submit.myshopify.io
+      KEY_CLAIM_TOKEN: test
+      RAILS_SERVE_STATIC_FILES: 1
+      RAILS_LOG_TO_STDOUT: 1
+      # seed the database with admin@covidshield.app user and specified password
+      # ADMIN_PASSWORD: trackntrace
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    restart: unless-stopped

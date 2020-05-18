@@ -1,0 +1,63 @@
+/** Color palette **/
+$color-primary: #002d42;
+$color-blue: #0278a4;
+$color-pink: #ca276b;
+$color-red: #d3080c;
+$color-yellow: #ffd171;
+$color-grey: #cdcdcd;
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-border: #cfcfcf;
+$color-background: #f5f5f5;
+$color-surface: #ffffff;
+$color-text: #212529;
+$color-text-subdued: #74767b;
+
+/** Layout **/
+$page-max-width: 700px;
+
+/** Spacing **/
+$spacing: 20px;
+$spacing-tight: 10px;
+$spacing-extra-tight: 6px;
+
+/** Typography **/
+$font-family: "Nunito Sans", sans-serif;
+
+/** Borders **/
+$border-default: 1px solid $color-border;
+
+/** Border radii **/
+$border-radius: 4px;
+$border-radius-large: 10px;
+
+/** Breakpoints */
+$breakpoint-large-screen: 520px;
+
+@mixin action-focus-ring {
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 3px rgba($color-blue, 0.4);
+  }
+
+  @media (-ms-high-contrast: active) {
+    &:focus {
+      outline: 1px solid $color-blue;
+    }
+  }
+}
+
+@mixin form-focus-ring {
+  &:focus {
+    outline: none;
+    border-color: $color-blue;
+    box-shadow: 0px 0px 0px 3px rgba($color-blue, 0.2);
+  }
+
+  @media (-ms-high-contrast: active) {
+    &:focus {
+      outline: 1px solid $color-blue;
+    }
+  }
+}

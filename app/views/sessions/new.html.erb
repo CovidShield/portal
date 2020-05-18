@@ -1,0 +1,30 @@
+<h1 class="visually-hidden"><%= t('login.title') %></h1>
+
+<div class="login">
+  <%= form_tag sessions_path do |form| %>
+    <div class="card">
+      <div class="card__header card__header--centered">
+        <%= image_tag("logo-shield.svg", class: "login__logo", alt: t('logo_alt')) %>
+        <span><%= t('title') %></span>
+      </div>
+      <div class="card__body">
+        <% if alert %>
+          <div class="error" id="alert"><%= alert %></div>
+        <% end %>
+        <div class="text-field">
+          <%= label_tag :username, t('login.username'), class: 'text-field__label' %>
+          <%= text_field_tag :username, '', class: 'text-field__input', placeholder: t('login.username_placeholder') %>
+        </div>
+        <div class="text-field">
+          <%= label_tag :password, t('login.password'), class: 'text-field__label' %>
+          <%= password_field_tag :password, '', class: 'text-field__input', placeholder: t('login.password_placeholder') %>
+        </div>
+      </div>
+      <div class="card__footer">
+        <div class="card__footer-actions card__footer-actions--align-right">
+          <%= submit_tag t('login.sign_in'), class: 'button button--primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

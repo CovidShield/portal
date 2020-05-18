@@ -1,0 +1,21 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: -$spacing;
+  margin-left: -$spacing;
+}
+
+.grid__item {
+  flex: 0 1 auto;
+  width: 100%;
+
+  margin-top: $spacing;
+  margin-left: $spacing;
+}
+
+.grid__item--half {
+  @media screen and (min-width: $breakpoint-large-screen) {
+    width: calc(50% - #{$spacing});
+  }
+}

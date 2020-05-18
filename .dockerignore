@@ -1,0 +1,6 @@
+.dockerignore
+.git
+logs/
+tmp/
+node_modules/
+bootstrap.sh

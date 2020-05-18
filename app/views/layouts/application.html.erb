@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="<%= current_locale %>">
+  <head>
+    <title><%= t('title') %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_user %>
+      <div class="top-bar">
+        <div class="top-bar__container">
+          <div class="top-bar__group">
+            <%= link_to root_path, class: 'top-bar__link' do %>
+              <div class="top-bar__branding">
+                <%= image_tag("logo-shield.svg", class: "top-bar__logo", alt: t('logo_alt')) %>
+                <span class="top-bar__title"><%= t('title') %></span>
+              </div>
+            <% end %>
+          </div>
+          <div class="top-bar__group">
+            <div class="popover" data-popover>
+              <button id="menu-button" type="button" class="top-bar__link" data-popover-activator aria-controls="menu-popover" aria-haspopup="true">
+                <%= t('nav.menu') %>
+              </button>
+              <div class="popover__content" data-popover-content>
+                <nav>
+                  <ul id="menu-popover" class="popover__list" role="menu" aria-labelledby="menu-button">
+                    <% if current_user.admin %>
+                      <li role="none">
+                        <%= nav_item(users_path) do %>
+                          <svg class="popover__icon"><use xlink:href="#users" /></svg>
+                          <%= t('manage_users') %>
+                        <% end %>
+                      </li>
+                    <% end %>
+                    <li role="none">
+                      <%= nav_item(edit_user_path(current_user)) do %>
+                        <svg class="popover__icon"><use xlink:href="#settings" /></svg>
+                        <%= t('settings') %>
+                      <% end %>
+                    </li>
+                    <li role="none">
+                      <%= nav_item(logout_path) do %>
+                        <svg class="popover__icon"><use xlink:href="#logout" /></svg>
+                        <%= t('sign_out') %>
+                      <% end %>
+                    </li>
+                  </ul>    
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <%= render :partial => 'icons' %>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+# https://development.shopify.io/tools/dev/railgun/Railgun-Config
+name: portal
+
+vm:
+  image: /opt/dev/misc/railgun-images/default
+  ip_address: 192.168.64.228
+  memory: 2G
+  cores: 2
+
+volumes:
+  root: "2G"
+
+services:
+  - redis
+  - memcached
+  - mysql
+  - nginx
+
+hostnames:
+  - portal.myshopify.io: { proxy_to_host_port: 18335 }

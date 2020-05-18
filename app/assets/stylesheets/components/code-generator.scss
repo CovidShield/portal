@@ -1,0 +1,36 @@
+.code-generator {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+}
+
+.code-generator__banner {
+  background-color: rgba($color-blue, 0.1);
+  border-radius: $border-radius;
+  display: flex;
+  flex: 0 1 320px;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-extra-tight $spacing-tight;
+  margin: $spacing-extra-tight $spacing $spacing-extra-tight 0;
+  font-size: 20px;
+  letter-spacing: 8px;
+}
+
+.code-generator__banner--expired {
+  background-color: rgba($color-yellow, 0.4);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.code-generator__empty-banner::before {
+  display: block;
+  content: "\25CF\25CF\25CF\25CF\0020\25CF\25CF\25CF\25CF";
+  font-size: 20px;
+}
+
+.code-generator__button {
+  flex: 0 0 200px;
+}

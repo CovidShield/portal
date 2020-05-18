@@ -1,0 +1,36 @@
+.button {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: $color-primary;
+  font-size: 16px;
+  font-weight: 300;
+  padding: $spacing-extra-tight $spacing;
+  border: 1px solid $color-primary;
+  border-radius: $border-radius;
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 100ms ease-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  @include action-focus-ring;
+
+  @media screen and (min-width: $breakpoint-large-screen) {
+    width: auto;
+  }
+}
+
+.button--primary {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.button:disabled {
+  background-color: $color-grey;
+  border-color: $color-grey;
+  color: rgba($color-black, 0.4);
+  cursor: default;
+}

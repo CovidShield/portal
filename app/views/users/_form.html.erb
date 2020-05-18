@@ -1,0 +1,67 @@
+<%= form_with(model: user, local: true, class: 'form', html: {'data-disabled-until-dirty': true, autocomplete: 'off'}) do |form| %>
+  <div class="card">
+    <div class="card__body">
+      <div class="grid">
+        <div class="grid__item grid__item--half">
+          <%= form.label :locale, t('language'), class: 'select__label' %>
+          <%= form.select(:locale, [['English', 'en'], ['Français', 'fr']], {}, class: 'select') %>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="grid__item grid__item--half">
+          <div class="<%= text_field_classes(user.errors[:username]) %>">
+            <%= form.label :username, t('username'), class: 'text-field__label' %>
+            <%= form.text_field :username, class: 'text-field__input' %>
+            <% if user.errors[:username].any? %>
+              <div class="text-field__error-message">
+                <%= user.errors[:username].join(',') %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid">
+        <div class="grid__item grid__item--half">
+          <div class="<%= text_field_classes(user.errors[:password]) %>">
+            <%= form.label :password, t('password'), class: 'text-field__label' %>
+            <%= form.password_field :password, class: 'text-field__input', autocomplete: 'new-password' %>
+            <% if user.errors[:password].any? %>
+              <div class="text-field__error-message">
+                <%= user.errors[:password].join(',') %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="grid__item grid__item--half">
+          <div class="<%= text_field_classes(user.errors[:password_confirmation]) %>">
+            <%= form.label :password_confirmation, t('user_form.confirm_password'), class: 'text-field__label' %>
+            <%= form.password_field :password_confirmation, class: 'text-field__input' %>
+            <% if user.errors[:password_confirmation].any? %>
+              <div class="text-field__error-message">
+                <%= user.errors[:password_confirmation].join(',') %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <%  if current_user.admin %>
+        <div class="grid">
+          <div class="grid__item grid__item--half">
+            <%= form.label :admin, t('user_form.permissions_label'), class: 'select__label' %>
+            <%= form.select(:admin, [[t('staff'), false], [t('admin'), true]], {}, class: 'select') %>
+          </div>
+        </div>
+      <% end %>    
+    </div>
+    <div class="card__footer">
+      <div class="card__footer-actions">
+        <%= link_to t('cancel'), users_path, class: 'button' %>
+        <%= form.submit button_text, class: 'button button--primary', disabled: 'true', data: {'submit': true} %>
+      </div>
+    </div>
+  </div>
+<% end %>

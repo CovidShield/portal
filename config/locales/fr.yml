@@ -1,0 +1,85 @@
+fr:
+  title: "COVID Bouclier"
+  more_info: "Plus d'information"
+  logo_alt: "COVID Bouclier logo"
+  username: "Nom d'utilisateur"
+  password: "Mot de passe"
+  permissions: "Autorisations"
+  language: "Langue"
+  admin: "Admin"
+  staff: "Personnel"
+  cancel: "Annuler"
+  menu: "Menu"
+  settings: "Settings"
+  activerecord:
+    models:
+      user:
+        one: Utilisateur
+        other: Utilisateurs
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              blank: "Vous devez entrer un nom d'utilisateur"
+              taken: "Nom d'utilisateur déjà pris"
+            password:
+              blank: "Vous devez saisir un mot de passe"
+            password_confirmation:
+              blank: "Vous devez confirmer votre mot de passe"
+              confirmation: "Le mot de passe et la confirmation doivent correspondre"
+  nav:
+    home: "Accueil"
+    manage_users: "Gérer les utilisateurs"
+    log_out: "Se déconnecter"
+  login:
+    title: "COVID Bouclier Login"
+    error: "Nom d'utilisateur ou mot de passe invalide."
+    username_placeholder: "Enter username"
+    password_placeholder: "Enter password"
+    sign_in: "se connecter"
+  home:
+    title: "Authentication code"
+    next_patient: "Next patient"
+    card1:
+      title: "Help patient install COVID Shield app"
+      subheading: "Instruct the patient to:"
+      step1_html: "Visit <strong>http://gc.ca/covid-shield</strong>"
+      step2: "Click on either the Apple AppStore or GooglePlay button"
+      step3: "Install the app"
+    card2:
+      title: "Create new COVID Shield Code"
+      subheading: "Instruct the patient to:"
+      step1: "Open the COVID Shield app"
+      step2: "Tap on the white section at the bottom of the screen"
+      step2_modal_title: "Step 2"
+      step2_modal_content: "Tap on the white section at the bottom of the screen."
+      step2_modal_alt: "Screenshot of COVID Shield mobile app with bottom sheet highlighted"
+      step3_html: 'Tap the <code class="inline-code">Submit code</code> button'
+      step3_modal_title: "Step 3"
+      step3_modal_content_html: 'Tap the <span class="inline-code">Submit code</span> button.'
+      step3_modal_alt: "Screenshot of COVID Shield mobile app with submit code button highlighted"
+      step4: "In the code field, enter:"
+      step4_code_expired: "This code has expired."
+      step4_generate_code: "Generate code"
+      step4_generate_new_code: "Generate new code"
+      step5_html: 'Tap the <code class="inline-code">I agree</code> button'
+      step5_modal_title: "Step 5"
+      step5_modal_content_html: 'Tap the <span class="inline-code">I agree</span> button.'
+      step5_modal_alt: "Screenshot of COVID Shield mobile app with I agree button highlighted"
+  users_index:
+    title: "Manage users"
+    add: "Add user"
+    edit: "Edit"
+    remove: "Remove"
+    confirm_delete: "Are you sure you want to delete this user?"
+  user_form:
+    save: "Save"
+    confirm_password: "Confirm password"
+    permissions_label: "User permissions"
+    permissions_help_text: "Admin accounts can add and remove users."
+  add_user:
+    title: "Add user"
+  edit_user:
+    title: "Edit user"
+    update_user: "Update user"
