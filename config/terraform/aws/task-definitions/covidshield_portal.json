@@ -1,0 +1,47 @@
+[
+    {
+      "name": "portal",
+      "image": "${image}",
+      "portMappings": [
+        {
+          "containerPort": 3000
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "${awslogs-group}",
+          "awslogs-region": "${awslogs-region}",
+          "awslogs-stream-prefix": "${awslogs-stream-prefix}"
+        }
+      },
+      "secrets": [
+        {
+          "name": "RAILS_MASTER_KEY",
+          "valueFrom": "${rails_master_key}"
+        },
+        {
+          "name": "DATABASE_URL",
+          "valueFrom": "${database_url}"
+        }
+      ],
+      "environment": [
+        {
+          "name": "RAILS_ENV",
+          "value": "${rails_env}"
+        },
+        {
+          "name": "RAILS_SERVE_STATIC_FILES",
+          "value": "${rails_serve_static_files}"
+        },
+        {
+          "name": "RAILS_BOOTSTRAP",
+          "value": "${rails_bootstrap}"
+        },
+        {
+          "name": "KEY_CLAIM_HOST",
+          "value": "${key_claim_host}"
+        }
+      ]
+    }
+  ]
