@@ -14,13 +14,13 @@ export function initializePopovers() {
     activator.addEventListener("click", (event) => {
       event.stopPropagation();
       if (popover.dataset.popoverActive) {
-        activator.setAttribute = ("aria-expanded", "false");
+        activator.setAttribute("aria-expanded", "false");
         delete popover.dataset.popoverActive;
         return;
       }
 
       popover.dataset.popoverActive = true;
-      activator.setAttribute = ("aria-expanded", "true");
+      activator.setAttribute("aria-expanded", "true");
 
       addOnce(document, "click", () => delete popover.dataset.popoverActive);
 
