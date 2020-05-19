@@ -1,4 +1,4 @@
-export function handleLoadFocus() {
+export function initializeFocus() {
   const alert = document.querySelector("[data-alert]");
 
   if (alert) {
@@ -15,4 +15,4 @@ export function handleLoadFocus() {
   }
 }
 
-document.addEventListener("turbolinks:load", handleLoadFocus);
+document.addEventListener("turbolinks:load", initializeFocus);
