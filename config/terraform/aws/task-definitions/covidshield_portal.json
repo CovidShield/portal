@@ -6,7 +6,7 @@
       "bundle",
       "exec",
       "rake",
-      "covidshield:bootstrap"
+      "portal:bootstrap"
     ],
     "logConfiguration": {
       "logDriver": "awslogs",
