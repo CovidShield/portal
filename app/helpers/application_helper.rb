@@ -3,7 +3,7 @@ module ApplicationHelper
     if request.path == path
       content_tag(:span, class: 'popover__link popover__link--active', &block)
     else
-      link_to(path, class: 'popover__link', role: 'menuitem', &block)
+      link_to(path, class: 'popover__link', &block)
     end
   end
 

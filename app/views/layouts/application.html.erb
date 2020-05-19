@@ -28,27 +28,27 @@
           </div>
           <div class="top-bar__group">
             <div class="popover" data-popover>
-              <button id="menu-button" type="button" class="top-bar__link" data-popover-activator aria-controls="menu-popover" aria-haspopup="true">
-                <%= t('nav.menu') %>
+              <button id="menu-button" type="button" class="top-bar__link" data-popover-activator aria-controls="menu-popover" aria-expanded="false">
+                <%= t('menu') %>
               </button>
               <div class="popover__content" data-popover-content>
                 <nav>
-                  <ul id="menu-popover" class="popover__list" role="menu" aria-labelledby="menu-button">
+                  <ul id="menu-popover" class="popover__list" role="list" aria-labelledby="menu-button">
                     <% if current_user.admin %>
-                      <li role="none">
+                      <li>
                         <%= nav_item(users_path) do %>
                           <svg class="popover__icon"><use xlink:href="#users" /></svg>
                           <%= t('manage_users') %>
                         <% end %>
                       </li>
                     <% end %>
-                    <li role="none">
+                    <li>
                       <%= nav_item(edit_user_path(current_user)) do %>
                         <svg class="popover__icon"><use xlink:href="#settings" /></svg>
                         <%= t('settings.title') %>
                       <% end %>
                     </li>
-                    <li role="none">
+                    <li>
                       <%= nav_item(logout_path) do %>
                         <svg class="popover__icon"><use xlink:href="#logout" /></svg>
                         <%= t('sign_out') %>
