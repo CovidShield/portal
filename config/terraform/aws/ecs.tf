@@ -16,7 +16,7 @@ data "github_branch" "portal" {
 data "aws_ecr_image" "covidshield_portal" {
   registry_id     = data.aws_ecr_repository.covidshield_portal.registry_id
   repository_name = data.aws_ecr_repository.covidshield_portal.name
-  image_tag       = data.github_branch.portal.sha
+  image_tag       = coalesce(var.github_sha, data.github_branch.portal.sha)
 }
 
 data "template_file" "covidshield_portal_task" {
