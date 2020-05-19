@@ -18,9 +18,9 @@
               'aria-invalid': (user.errors[:username].any? ? true : nil)
             %>
             <% if user.errors[:username].any? %>
-              <div id="usrname-error" class="text-field__error-message">
+              <small id="username-error" class="text-field__error-message">
                 <%= user.errors[:username].join(',') %>
-              </div>
+              </small>
             <% end %>
           </div>
         </div>
@@ -37,9 +37,9 @@
               'aria-invalid': (user.errors[:password].any? ? true : nil)
             %>
             <% if user.errors[:password].any? %>
-              <div id="password-error" class="text-field__error-message">
+              <small id="password-error" class="text-field__error-message">
                 <%= user.errors[:password].join(',') %>
-              </div>
+              </small>
             <% end %>
           </div>
         </div>
@@ -53,9 +53,9 @@
               'aria-invalid': (user.errors[:password_confirmation].any? ? true : nil)
             %>
             <% if user.errors[:password_confirmation].any? %>
-              <div id="password-confirmation-error" class="text-field__error-message">
+              <small id="password-confirmation-error" class="text-field__error-message">
                 <%= user.errors[:password_confirmation].join(',') %>
-              </div>
+              </small>
             <% end %>
           </div>
         </div>
