@@ -39,7 +39,7 @@ en:
     password_placeholder: "Enter password"
     sign_in: "Sign in"
   home:
-    title: "Authentication code"
+    title: "COVID Shield Portal"
     next_patient: "Next patient"
     card1:
       title: "Ensure patient has installed the COVID Shield app"
