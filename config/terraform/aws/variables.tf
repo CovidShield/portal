@@ -29,11 +29,6 @@ variable "ecs_task_portal_env_rails_serve_static_files" {
   type = string
 }
 
-variable "ecs_task_portal_env_rails_bootstrap" {
-  type    = string
-  default = "0"
-}
-
 variable "ecs_task_portal_env_rails_master_key" {
   type = string
 }

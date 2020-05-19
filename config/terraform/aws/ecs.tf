@@ -26,7 +26,6 @@ data "template_file" "covidshield_portal_task" {
     database_url             = aws_secretsmanager_secret_version.portal_database_url.arn
     rails_env                = var.ecs_task_portal_env_rails_env
     rails_serve_static_files = var.ecs_task_portal_env_rails_serve_static_files
-    rails_bootstrap          = var.ecs_task_portal_env_rails_bootstrap
     key_claim_host           = data.terraform_remote_state.backend.outputs.route53_submission_fqdn.name
   }
 }

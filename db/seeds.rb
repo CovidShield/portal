@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-unless Rails.env.production?
-  User.create({ username: 'admin', password: 'password', admin: true })
+if Rails.env.production?
+  User.create({ username: 'admin@covidshield.app', password: Rails.application.credentials.admin_password, admin: true })
+else
+  User.create({ username: 'admin@covidshield.app', password: 'password', admin: true })
 end

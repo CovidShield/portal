@@ -14,7 +14,6 @@ billing_tag_value = "CovidShield"
 ecs_portal_name                              = "Portal"
 ecs_task_portal_env_rails_env                = "production"
 ecs_task_portal_env_rails_serve_static_files = "1"
-ecs_task_portal_env_rails_bootstrap          = "1"
 # Comes from a Github secret
 # ecs_task_portal_env_rails_master_key         = ""
 
