@@ -1,4 +1,4 @@
-<h1 class="visually-hidden"><%= t('login.title') %></h1>
+<h1 class="visually-hidden"><%= t('sign_in.title') %></h1>
 
 <div class="login">
   <%= form_tag sessions_path do |form| %>
@@ -12,17 +12,17 @@
           <div class="error" id="alert"><%= alert %></div>
         <% end %>
         <div class="text-field">
-          <%= label_tag :username, t('login.username'), class: 'text-field__label' %>
-          <%= text_field_tag :username, '', class: 'text-field__input', placeholder: t('login.username_placeholder') %>
+          <%= label_tag :username, t('sign_in.username'), class: 'text-field__label' %>
+          <%= text_field_tag :username, '', class: 'text-field__input', placeholder: t('sign_in.username_placeholder') %>
         </div>
         <div class="text-field">
-          <%= label_tag :password, t('login.password'), class: 'text-field__label' %>
-          <%= password_field_tag :password, '', class: 'text-field__input', placeholder: t('login.password_placeholder') %>
+          <%= label_tag :password, t('sign_in.password'), class: 'text-field__label' %>
+          <%= password_field_tag :password, '', class: 'text-field__input', placeholder: t('sign_in.password_placeholder') %>
         </div>
       </div>
       <div class="card__footer">
         <div class="card__footer-actions card__footer-actions--align-right">
-          <%= submit_tag t('login.sign_in'), class: 'button button--primary' %>
+          <%= submit_tag t('sign_in.sign_in'), class: 'button button--primary' %>
         </div>
       </div>
     </div>
