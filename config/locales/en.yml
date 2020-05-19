@@ -32,9 +32,9 @@ en:
             password_confirmation:
               blank: "You must confirm your password"
               confirmation: "Password and confirmation must match"
-  login:
-    title: "COVID Shield Login"
-    error: "Invalid username or password."
+  sign_in:
+    title: "COVID Shield Sign In"
+    error: "Invalid username or password"
     username_placeholder: "Enter username"
     password_placeholder: "Enter password"
     sign_in: "Sign in"
