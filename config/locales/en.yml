@@ -61,6 +61,7 @@ en:
       step4: "In the code field, enter:"
       step4_code_expired: "This code has expired."
       step4_generate_code: "Generate code"
+      step4_generated_code: "Generated code"
       step4_generate_new_code: "Generate new code"
       step5_html: 'Tap the <code class="inline-code">I agree</code> button'
       step5_modal_title: "Step 5"
