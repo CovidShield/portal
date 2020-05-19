@@ -20,6 +20,10 @@ body {
   line-height: 22px;
 }
 
+h1 {
+  outline: 0;
+}
+
 [data-hidden] {
   display: none !important;
 }
