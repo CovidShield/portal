@@ -8,6 +8,7 @@
       "rake",
       "portal:bootstrap"
     ],
+    "essential": false,
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
