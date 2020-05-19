@@ -61,11 +61,11 @@ resource "aws_ecs_service" "covidshield_portal" {
   name            = var.ecs_portal_name
   cluster         = data.terraform_remote_state.backend.outputs.ecs_cluster.id
   task_definition = aws_ecs_task_definition.covidshield_portal.arn
-  desired_count   = 1
+  desired_count   = 2
   launch_type     = "FARGATE"
 
-  deployment_minimum_healthy_percent = 66
-  deployment_maximum_percent         = 100
+  deployment_minimum_healthy_percent = 50
+  deployment_maximum_percent         = 200
   health_check_grace_period_seconds  = 60
 
   network_configuration {
