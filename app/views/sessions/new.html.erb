@@ -9,7 +9,7 @@
       </div>
       <div class="card__body">
         <% if alert %>
-          <div class="error" id="alert"><%= alert %></div>
+          <div class="error" id="alert" data-alert><%= alert %></div>
         <% end %>
         <div class="text-field">
           <%= label_tag :username, t('sign_in.username'), class: 'text-field__label' %>
