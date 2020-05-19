@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_url
     else
-      flash.now[:alert] = I18n.t('login.error')
+      flash.now[:alert] = I18n.t('sign_in.error')
       render 'new'
     end
   end
