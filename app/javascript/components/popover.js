@@ -14,7 +14,7 @@ export function initializePopovers() {
     activator.addEventListener("click", (event) => {
       event.stopPropagation();
       if (popover.dataset.popoverActive) {
-        activator.removeAttribute = "aria-expanded";
+        activator.setAttribute = ("aria-expanded", "false");
         delete popover.dataset.popoverActive;
         return;
       }
