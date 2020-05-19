@@ -6,6 +6,8 @@ en:
   password: "Password"
   permissions: "Permissions"
   language: "Language"
+  language_en: "English"
+  language_fr: "Français"
   admin: "Admin"
   staff: "Staff"
   cancel: "Cancel"
@@ -67,17 +69,21 @@ en:
       step5_modal_alt: "Screenshot of COVID Shield mobile app with I agree button highlighted"
   users_index:
     title: "Manage users"
-    add: "Add user"
+    add_button: "Add user"
     edit: "Edit"
     remove: "Remove"
     confirm_delete: "Are you sure you want to remove this user?"
   user_form:
-    save: "Save"
     confirm_password: "Confirm password"
     permissions_label: "User permissions"
-    permissions_help_text: "Admin accounts can add and remove users."
+    permissions_help_text_admin: "Admin accounts can add and remove users."
+    permissions_help_text_staff: "Staff accounts cannot add or remove users."
   add_user:
     title: "Add user"
+    add_user_button: "Add user"
   edit_user:
     title: "Edit user"
-    update_user: "Save changes"
+    update_user_button: "Save changes"
+  settings:
+    title: "Settings"
+    update_settings_button: "Save changes"
