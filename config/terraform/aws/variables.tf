@@ -17,7 +17,7 @@ variable "billing_tag_value" {
 # AWS ECS - ecs.tf
 ###
 variable "github_sha" {
-  type = string
+  type    = string
   default = ""
 }
 
