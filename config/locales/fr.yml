@@ -1,43 +1,43 @@
 fr:
   title: "COVID Shield"
-  more_info: "More information"
-  logo_alt: "COVID Shield logo"
-  username: "Username"
-  password: "Password"
+  more_info: "Plus d'information"
+  logo_alt: "logo COVID Shield"
+  username: "Nom d'utilisateur"
+  password: "Mot de passe"
   permissions: "Permissions"
-  language: "Language"
+  language: "Langue"
   language_en: "English"
   language_fr: "Français"
-  admin: "Admin"
-  staff: "Staff"
-  cancel: "Cancel"
+  admin: "Administrateur"
+  staff: "Employé"
+  cancel: "Annuler"
   menu: "Menu"
-  settings: "Settings"
-  manage_users: "Manage users"
-  sign_out: "Sign out"
+  settings: "Réglages"
+  manage_users: "Gérer les utilisateurs"
+  sign_out: "Se déconnecter"
   activerecord:
     models:
       user:
-        one: User
-        other: Users
+        one: Utilisateur
+        other: Utilisateurs
     errors:
       models:
         user:
           attributes:
             username:
-              blank: "You must enter a username"
-              taken: "Username is already taken"
+              blank: "Vous devez entrer un nom d'utilisateur"
+              taken: "Ce nom d'utilisateur existe déjà"
             password:
-              blank: "You must enter a password"
+              blank: "Vous devez entrer un mot de passe"
             password_confirmation:
-              blank: "You must confirm your password"
-              confirmation: "Password and confirmation must match"
+              blank: "Vous devez confirmer votre mot de passe"
+              confirmation: "Les deux mots de passe doivent être identiques"
   sign_in:
-    title: "COVID Shield Sign In"
-    error: "Invalid username or password"
-    username_placeholder: "Enter username"
-    password_placeholder: "Enter password"
-    sign_in: "Sign in"
+    title: "Se connecter à COVID Shield"
+    error: "Nom d'utilisateur ou mot de passe non valide"
+    username_placeholder: "Entrez le nom d'utilisateur"
+    password_placeholder: "Entrez le mot de passe "
+    sign_in: "Se connecter"
   home:
     title: "COVID Shield Portal"
     next_patient: "Next patient"
@@ -69,22 +69,22 @@ fr:
       step5_modal_content_html: 'Tap the <span class="inline-code">I agree</span> button.'
       step5_modal_alt: "Screenshot of COVID Shield mobile app with I agree button highlighted"
   users_index:
-    title: "Manage users"
-    add_button: "Add user"
-    edit: "Edit"
-    remove: "Remove"
-    confirm_delete: "Are you sure you want to remove this user?"
+    title: "Gérer les utilisateurs"
+    add_button: "Ajouter un utilisateur"
+    edit: "Modifier"
+    remove: "Supprimer"
+    confirm_delete: "Êtes-vous sûr de vouloir supprimer cet utilisateur?"
   user_form:
-    confirm_password: "Confirm password"
-    permissions_label: "User permissions"
-    permissions_help_text_admin: "Admin accounts can add and remove users."
-    permissions_help_text_staff: "Staff accounts cannot add or remove users."
+    confirm_password: "Confirmez le mot de passe"
+    permissions_label: "Permissions de l'utilisateur"
+    permissions_help_text_admin: "Les comptes administrateurs peuvent ajouter et supprimer des utilisateurs."
+    permissions_help_text_staff: "Les comptes employés ne peuvent pas ajouter ou supprimer des utilisateurs."
   add_user:
-    title: "Add user"
-    add_user_button: "Add user"
+    title: "Ajouter un utilisateur"
+    add_user_button: "Ajouter"
   edit_user:
-    title: "Edit user"
-    update_user_button: "Save changes"
+    title: "Modifier un utilisateur"
+    update_user_button: "Enregistrer"
   settings:
-    title: "Settings"
-    update_settings_button: "Save changes"
+    title: "Réglages"
+    update_settings_button: "Enregistrer"
