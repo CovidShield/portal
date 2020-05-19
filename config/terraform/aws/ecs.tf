@@ -8,10 +8,15 @@ data "aws_ecr_repository" "covidshield_portal" {
   name = "portal"
 }
 
+data "github_branch" "portal" {
+  repository = "portal"
+  branch     = "master"
+}
+
 data "aws_ecr_image" "covidshield_portal" {
   registry_id     = data.aws_ecr_repository.covidshield_portal.registry_id
   repository_name = data.aws_ecr_repository.covidshield_portal.name
-  image_tag       = "latest"
+  image_tag       = data.github_branch.portal.sha
 }
 
 data "template_file" "covidshield_portal_task" {
