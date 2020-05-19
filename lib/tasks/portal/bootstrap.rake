@@ -3,11 +3,9 @@ namespace :portal do
   task :bootstrap do
     Rake::Task['environment'].invoke
 
-    full_setup = setup_required?
-
-    Rake::Task['db:setup'].invoke if full_setup
+    Rake::Task['db:setup'].invoke if setup_required?
     Rake::Task['db:migrate'].invoke
-    Rake::Task['db:seed'].invoke if full_setup
+    Rake::Task['db:seed'].invoke unless User.exists?(username: 'admin@covidshield.app')
   end
 
   def setup_required?
