@@ -16,6 +16,11 @@ variable "billing_tag_value" {
 ###
 # AWS ECS - ecs.tf
 ###
+variable "github_sha" {
+  type = string
+  default = ""
+}
+
 # Task Portal
 variable "ecs_portal_name" {
   type = string
