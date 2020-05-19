@@ -42,7 +42,7 @@
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
                 <span><%= t('home.card2.step2') %></span>
-                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step2-2">
+                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step2-2" aria-haspopup="dialog">
                   <svg class="icon"><use xlink:href="#question-mark" /></svg>
                 </button>
                 <%= render 'components/modal', {id: 'step2-2', title: t('home.card2.step2_modal_title')} do %>
@@ -54,7 +54,7 @@
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
                 <%= t('home.card2.step3_html') %>
-                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step2-3">
+                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step2-3" aria-haspopup="dialog">
                   <svg class="icon"><use xlink:href="#question-mark" /></svg>
                 </button>
                 <%= render 'components/modal', {id: 'step2-3', title: t('home.card2.step3_modal_title')} do %>
@@ -86,7 +86,7 @@
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
                 <%= t('home.card2.step5_html') %>
-                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step2-5">
+                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step2-5" aria-haspopup="dialog">
                   <svg class="icon"><use xlink:href="#question-mark" /></svg>
                 </button>
                 <%= render 'components/modal', {id: 'step2-5', title: t('home.card2.step5_modal_title')} do %>
