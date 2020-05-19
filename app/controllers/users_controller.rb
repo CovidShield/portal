@@ -18,7 +18,12 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    @page_title = "#{I18n.t('edit_user.title')} | #{I18n.t('title')}"
+    if current_user != @user
+      @page_title = "#{I18n.t('edit_user.title')} | #{I18n.t('title')}"
+    else
+      @page_title = "#{I18n.t('settings.title')} | #{I18n.t('title')}"
+    end
+    
 
     if !current_user.admin && current_user != @user
       redirect_to root_path
