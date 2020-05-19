@@ -4,7 +4,7 @@
       <div class="grid">
         <div class="grid__item grid__item--half">
           <%= form.label :locale, t('language'), class: 'select__label' %>
-          <%= form.select(:locale, [['English', 'en'], ['Français', 'fr']], {}, class: 'select') %>
+          <%= form.select(:locale, [[t('language_en'), 'en'], [t('language_fr'), 'fr']], {}, class: 'select') %>
         </div>
       </div>
 

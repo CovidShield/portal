@@ -12,7 +12,6 @@ en:
   staff: "Staff"
   cancel: "Cancel"
   menu: "Menu"
-  settings: "Settings"
   manage_users: "Manage users"
   sign_out: "Sign out"
   activerecord:
