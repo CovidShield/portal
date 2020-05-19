@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
-    @page_title = I18n.t 'sign_in.title'
+    @page_title = "#{I18n.t('sign_in.title')} | #{I18n.t('title')}"
   end
 
   def create
