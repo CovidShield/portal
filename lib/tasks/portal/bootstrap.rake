@@ -1,13 +1,13 @@
 desc "Bootstrap DB if necessary"
 namespace :portal do
   task :bootstrap do
-    if setup_required?
-      Rake::Task['db:setup'].invoke
-    end
+    Rake::Task['environment'].invoke
 
-    if migrate_required?
-      Rake::Task['db:setup'].invoke
-    end
+    full_setup = setup_required?
+
+    Rake::Task['db:setup'].invoke if full_setup
+    Rake::Task['db:migrate'].invoke
+    Rake::Task['db:seed'].invoke if full_setup
   end
 
   def setup_required?
@@ -17,9 +17,5 @@ namespace :portal do
     rescue
       true
     end
-  end
-
-  def migrate_required?
-    ActiveRecord::Base.connection.tables.include? User.table_name
   end
 end
