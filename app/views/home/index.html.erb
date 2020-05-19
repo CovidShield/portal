@@ -67,8 +67,8 @@
               <div class="ordered-list__item-content">
                 <div><%= t('home.card2.step4') %></div>
                 <div class="code-generator">
-                  <div id="code-result" class="code-generator__banner" data-code-banner>
-                    <div data-code-result aria-live="polite"></div>
+                  <div id="code-result" class="code-generator__banner" role="region" aria-label="<%= t('home.card2.step4_generated_code') %>" data-code-banner>
+                    <strong class="code-generator__result" data-code-result aria-live="polite"></strong>
                     <div aria-hidden="true" class="code-generator__empty-banner" data-code-empty-result></div>
                   </div>
                   <div class="code-generator__banner code-generator__banner--expired" data-code-expired data-hidden>

@@ -25,6 +25,10 @@
   letter-spacing: 0;
 }
 
+.code-generator__result {
+  font-weight: normal;
+}
+
 .code-generator__empty-banner::before {
   display: block;
   content: "\25CF\25CF\25CF\25CF\0020\25CF\25CF\25CF\25CF";
