@@ -75,14 +75,6 @@
         "value": "${rails_serve_static_files}"
       },
       {
-        "name": "RAILS_BOOTSTRAP",
-        "value": "${rails_bootstrap}"
-      },
-      {
-        "name": "RAILS_DB_MIGRATE",
-        "value": "${rails_db_migrate}"
-      },
-      {
         "name": "KEY_CLAIM_HOST",
         "value": "${key_claim_host}"
       }
