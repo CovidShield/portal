@@ -35,7 +35,22 @@
                 </td>
                 <td class="index__cell" width="1">
                   <% if user != current_user %>
-                    <%= link_to t('users_index.remove'), user, class: 'link', method: :delete, data: { confirm: t('users_index.confirm_delete') } %>
+                    <button class="link" type="button" data-modal-activator="remove-user-<%= user.id %>" aria-haspopup="dialog">
+                      <%= t('users_index.remove') %>
+                    </button>
+                    <% 
+                      @footer = capture do
+                        link_to t('users_index.remove_user'), user, class: 'button button--primary', method: :delete
+                      end
+                    %>
+                    <%= render 'components/modal', {
+                      id: "remove-user-#{user.id}",
+                      title: t('users_index.remove_user'),
+                      footer: @footer
+                    } do %>
+                      <p><%= t('users_index.confirm_delete_html', user: user.username) %></p>
+                      <p><%= t('users_index.cannot_be_undone') %></p>
+                    <% end %> 
                   <% end %>
                 </td>
               </tr>
