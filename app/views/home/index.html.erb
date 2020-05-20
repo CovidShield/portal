@@ -1,30 +1,22 @@
 <div class="page">
   <div class="page__container">
     <div class="page__header">
-      <div class="visually-hidden">
-        <h1 tabindex="-1"><%= t('home.title')%></h1>
-      </div>
+      <h1 class="page__title" tabindex="-1"><%= t('home.title')%></h1>
     </div>
     <div class="page__content">
       <div class="card">
-        <div class="card__header">
-          <h2 class="card__title"><%= t('home.card1.title') %></h2>
-        </div>
         <div class="card__body">
-          <p class="subheading"><%= t('home.card1.subheading') %></p>
+          <p class="subheading"><strong><%= t('home.card1.criteria_intro') %></strong></p>
           <ol class="ordered-list">
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
-                <%= t('home.card1.step1_html') %>
+                <%= t('home.card1.criteria1') %>
               </div>
             </li>
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
-                <%= t('home.card1.step2') %>
+                <%= t('home.card1.criteria2') %>
               </div>
-            </li>
-            <li class="ordered-list__item">
-              <div class="ordered-list__item-content"><%= t('home.card1.step3') %></div>
             </li>
           </ol>
         </div>
@@ -37,47 +29,70 @@
           <p class="subheading"><%= t('home.card2.subheading') %></p>
           <ol class="ordered-list">
             <li class="ordered-list__item">
-              <div class="ordered-list__item-content"><%= t('home.card2.step1') %></div>
+              <div class="ordered-list__item-content">
+                <%= t('home.card2.step1_html') %>
+              </div>
             </li>
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
-                <span><%= t('home.card2.step2') %></span>
+                <%= t('home.card2.step2') %>
+              </div>
+            </li>
+            <li class="ordered-list__item">
+              <div class="ordered-list__item-content"><%= t('home.card2.step3') %></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__header">
+          <h2 class="card__title"><%= t('home.card3.title') %></h2>
+        </div>
+        <div class="card__body">
+          <p class="subheading"><%= t('home.card3.subheading') %></p>
+          <ol class="ordered-list">
+            <li class="ordered-list__item">
+              <div class="ordered-list__item-content"><%= t('home.card3.step1') %></div>
+            </li>
+            <li class="ordered-list__item">
+              <div class="ordered-list__item-content">
+                <span><%= t('home.card3.step2') %></span>
                 <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step2-2" aria-haspopup="dialog">
                   <svg class="icon"><use xlink:href="#question-mark" /></svg>
                 </button>
-                <%= render 'components/modal', {id: 'step2-2', title: t('home.card2.step2_modal_title')} do %>
-                  <p><%= t('home.card2.step2_modal_content') %></p>
-                  <%= image_tag('step2.png', class: 'image', alt: t('home.card2.step2_modal_alt')) %>
+                <%= render 'components/modal', {id: 'step2-2', title: t('home.card3.step2_modal_title')} do %>
+                  <p><%= t('home.card3.step2_modal_content') %></p>
+                  <%= image_tag('step2.png', class: 'image', alt: t('home.card3.step2_modal_alt')) %>
                 <% end %>  
               </div>
             </li>
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
-                <%= t('home.card2.step3_html') %>
+                <%= t('home.card3.step3_html') %>
                 <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step2-3" aria-haspopup="dialog">
                   <svg class="icon"><use xlink:href="#question-mark" /></svg>
                 </button>
-                <%= render 'components/modal', {id: 'step2-3', title: t('home.card2.step3_modal_title')} do %>
-                  <p><%= t('home.card2.step3_modal_content_html') %></p>
+                <%= render 'components/modal', {id: 'step2-3', title: t('home.card3.step3_modal_title')} do %>
+                  <p><%= t('home.card3.step3_modal_content_html') %></p>
                   <%= image_tag('step3.png', class: 'image', alt: t('home.card3.step2_modal_alt')) %>
                 <% end %>  
               </div>
             </li>
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
-                <div><%= t('home.card2.step4') %></div>
+                <div><%= t('home.card3.step4') %></div>
                 <div class="code-generator">
-                  <div id="code-result" class="code-generator__banner" role="region" aria-label="<%= t('home.card2.step4_generated_code') %>" data-code-banner>
+                  <div id="code-result" class="code-generator__banner" role="region" aria-label="<%= t('home.card3.step4_generated_code') %>" data-code-banner>
                     <strong class="code-generator__result" data-code-result aria-live="polite"></strong>
                     <div aria-hidden="true" class="code-generator__empty-banner" data-code-empty-result></div>
                   </div>
-                  <div class="code-generator__banner code-generator__banner--expired" data-code-expired data-hidden>
-                    <%= t('home.card2.step4_code_expired') %>
+                  <div class="code-generator__banner code-generato r__banner--expired" data-code-expired data-hidden>
+                    <%= t('home.card3.step4_code_expired') %>
                   </div>
                   <div class="code-generator__button">
                     <button type="button" class="button" data-generate-code aria-controls="code-result">
-                      <span data-generate-content><%= t('home.card2.step4_generate_code') %></span>
-                      <span data-generate-new-content data-hidden><%= t('home.card2.step4_generate_new_code') %></span>
+                      <span data-generate-content><%= t('home.card3.step4_generate_code') %></span>
+                      <span data-generate-new-content data-hidden><%= t('home.card3.step4_generate_new_code') %></span>
                     </button>
                   </div>
                 </div>
@@ -85,14 +100,43 @@
             </li>
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
-                <%= t('home.card2.step5_html') %>
-                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step2-5" aria-haspopup="dialog">
+                <%= t('home.card3.step5_html') %>
+                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step3-5" aria-haspopup="dialog">
                   <svg class="icon"><use xlink:href="#question-mark" /></svg>
                 </button>
-                <%= render 'components/modal', {id: 'step2-5', title: t('home.card2.step5_modal_title')} do %>
-                  <p><%= t('home.card2.step5_modal_content_html') %></p>
-                  <%= image_tag('step5.png', class: 'image', alt: t('home.card2.step5_modal_alt')) %>
+                <%= render 'components/modal', {id: 'step3-5', title: t('home.card3.step5_modal_title')} do %>
+                  <p><%= t('home.card3.step5_modal_content_html') %></p>
+                  <%= image_tag('step5.png', class: 'image', alt: t('home.card3.step5_modal_alt')) %>
                 <% end %>  
+              </div>
+            </li>
+            <li class="ordered-list__item">
+              <div class="ordered-list__item-content">
+                <%= t('home.card3.step6_html') %>
+                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step3-6" aria-haspopup="dialog">
+                  <svg class="icon"><use xlink:href="#question-mark" /></svg>
+                </button>
+                <%= render 'components/modal', {id: 'step3-6', title: t('home.card3.step6_modal_title')} do %>
+                  <p><%= t('home.card3.step6_modal_content_html') %></p>
+                  <%= image_tag('step6.png', class: 'image', alt: t('home.card3.step6_modal_alt')) %>
+                <% end %> 
+              </div>
+            </li>
+            <li class="ordered-list__item">
+              <div class="ordered-list__item-content">
+                <%= t('home.card3.step7_html') %>
+                <button aria-label="<%= t('more_info') %>" class="help__activator" type="button" data-modal-activator="step3-7" aria-haspopup="dialog">
+                  <svg class="icon"><use xlink:href="#question-mark" /></svg>
+                </button>
+                <%= render 'components/modal', {id: 'step3-7', title: t('home.card3.step7_modal_title')} do %>
+                  <p><%= t('home.card3.step7_modal_content_html') %></p>
+                  <%= image_tag('step7.png', class: 'image', alt: t('home.card3.step7_modal_alt')) %>
+                <% end %> 
+              </div>
+            </li>
+            <li class="ordered-list__item">
+              <div class="ordered-list__item-content">
+                <%= t('home.card3.step8') %>
               </div>
             </li>
           </ol>
