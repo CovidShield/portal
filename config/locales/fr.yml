@@ -12,7 +12,6 @@ fr:
   staff: "Employé"
   cancel: "Annuler"
   menu: "Menu"
-  settings: "Réglages"
   manage_users: "Gérer les utilisateurs"
   sign_out: "Se déconnecter"
   activerecord:
@@ -39,35 +38,50 @@ fr:
     password_placeholder: "Entrez le mot de passe "
     sign_in: "Se connecter"
   home:
-    title: "COVID Shield Portal"
-    next_patient: "Next patient"
+    title: "Accueil"
+    next_patient: "Patient suivant"
     card1:
-      title: "Ensure patient has installed the COVID Shield app"
-      subheading: "Instruct the patient to:"
-      step1_html: "Visit <strong>http://gc.ca/covid-shield</strong>"
-      step2: "Click on either the Apple AppStore or GooglePlay button"
-      step3: "Install the app"
+      criteria_intro: "Les codes COVID Shield devraient seulement être donnés aux patients avec:"
+      criteria1: "un résultat confirmé de test positif à la COVID-19"
+      criteria2: "{autres critères additionnels optionels, tel que d'avoir un diagnostic confirmé}"
+      hide: "Voir moins"
+      show: "Voir plus"
     card2:
-      title: "Provide patient with COVID Shield code"
-      subheading: "Instruct the patient to:"
-      step1: "Open the COVID Shield app"
-      step2: "Tap on the white section at the bottom of the screen"
-      step2_modal_title: "Step 2"
-      step2_modal_content: "Tap on the white section at the bottom of the screen."
-      step2_modal_alt: "Screenshot of COVID Shield mobile app with bottom sheet highlighted"
-      step3_html: 'Tap the <code class="inline-code">Submit code</code> button'
-      step3_modal_title: "Step 3"
-      step3_modal_content_html: 'Tap the <span class="inline-code">Submit code</span> button.'
-      step3_modal_alt: "Screenshot of COVID Shield mobile app with submit code button highlighted"
-      step4: "In the code field, enter:"
-      step4_code_expired: "This code has expired."
-      step4_generate_code: "Generate code"
-      step4_generated_code: "Generated code"
-      step4_generate_new_code: "Generate new code"
-      step5_html: 'Tap the <code class="inline-code">I agree</code> button'
-      step5_modal_title: "Step 5"
-      step5_modal_content_html: 'Tap the <span class="inline-code">I agree</span> button.'
-      step5_modal_alt: "Screenshot of COVID Shield mobile app with I agree button highlighted"
+      title: "Assurez-vous que le patient a l'application COVID Shield d'installée sur son téléphone"
+      subheading: "Dites au patient de:"
+      step1_html: "Visiter <strong>https://www.covidshield.app/download</strong>."
+      step2: "Appuyer sur l'icône de l'App store d'Apple (iPhones) ou de Google Play (Android)."
+      step3: "Installer l'application."
+    card3:
+      title: "Fournir au patient un code COVID Shield"
+      subheading: "Dites au patient de:"
+      step1: "Appuyer sur l'icône pour ouvrir l'application COVID Shield."
+      step2: "Appuyer sur la section blanche au bas de l'écran."
+      step2_modal_title: "Étape 2"
+      step2_modal_content: "Appuyer sur la section blanche au bas de l'écran."
+      step2_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec la section blanche au bas de l'écran encadrée"
+      step3_html: 'Appuyer sur le bouton <code class="inline-code">Entrez le code</code>.'
+      step3_modal_title: "Étape 3"
+      step3_modal_content_html: 'Appuyer sur le bouton <span class="inline-code">Entrez le code</span> .'
+      step3_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Entrez le code encadré"
+      step4: "Entrez le code à 8 chiffres suivant:"
+      step4_code_expired: "Ce code est expiré."
+      step4_generate_code: "Générer un code"
+      step4_generated_code: "Code généré"
+      step4_generate_new_code: "Générer un nouveau code"
+      step5_html: 'Appuyer sur le bouton <code class="inline-code">Soumettre le code</code>.'
+      step5_modal_title: "Étape 5"
+      step5_modal_content_html: 'Appuyer sur le bouton <span class="inline-code">Soumettre le code</span>.'
+      step5_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Soumettre le code encadré"
+      step6_html: 'Appuyer sur le bouton <code class="inline-code">Accepter</code>. Ceci partagera les identifiants aléatoires de votre téléphone de façon anonyme.'
+      step6_modal_title: "Étape 6"
+      step6_modal_content_html: 'Appuyer sur le bouton <span class="inline-code">Accepter</span>.'
+      step6_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Accepter encadré"
+      step7_html: 'Appuyer sur <code class="inline-code">Autoriser</code> ou <code class="inline-code">Partager</code>.'
+      step7_modal_title: "Étape 7"
+      step7_modal_content_html: 'Appuyer sur <code class="inline-code">Autoriser</code> ou <code class="inline-code">Partager</code>.'
+      step7_modal_alt: "Capture d'écran des messages de permission d'iOS et Android"
+      step8: "Vous n'avez pas besoin de faire autre chose pour aujourd'hui. Vous allez recevoir chaque jour, pour les 13 prochains jours, une notification vous demandant la permission de partager vos nouveaux identifiants aléatoires."
   users_index:
     title: "Gérer les utilisateurs"
     add_button: "Ajouter un utilisateur"
