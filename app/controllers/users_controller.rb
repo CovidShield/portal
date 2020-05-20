@@ -6,16 +6,24 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @page_title = "#{I18n.t('users_index.title')} | #{I18n.t('title')}"
   end
 
   # GET /users/new
   def new
     @user = User.new
+    @page_title = "#{I18n.t('add_user.title')} | #{I18n.t('title')}"
   end
 
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    if current_user != @user
+      @page_title = "#{I18n.t('edit_user.title')} | #{I18n.t('title')}"
+    else
+      @page_title = "#{I18n.t('settings.title')} | #{I18n.t('title')}"
+    end
+    
 
     if !current_user.admin && current_user != @user
       redirect_to root_path

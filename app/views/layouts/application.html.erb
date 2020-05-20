@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= current_locale %>">
   <head>
-    <title><%= t('title') %></title>
+    <title><%= @page_title || t('title') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="icon" href="/favicon.ico" />
