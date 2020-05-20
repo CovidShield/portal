@@ -89,7 +89,9 @@ fr:
     add_button: "Ajouter un utilisateur"
     edit: "Modifier"
     remove: "Supprimer"
-    confirm_delete: "Êtes-vous sûr de vouloir supprimer cet utilisateur?"
+    remove_user: "Supprimer un utilisateur"
+    confirm_delete_html: "Vous êtes sur le point de supprimer <strong>%{user}</strong>."
+    cannot_be_undone: "Cette action ne peut pas être annulée."
   user_form:
     confirm_password: "Confirmer le mot de passe"
     permissions_label: "Permissions de l'utilisateur"
