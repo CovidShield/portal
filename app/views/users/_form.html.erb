@@ -12,11 +12,15 @@
         <div class="grid__item grid__item--half">
           <div class="<%= text_field_classes(user.errors[:username]) %>">
             <%= form.label :username, t('username'), class: 'text-field__label' %>
-            <%= form.text_field :username, class: 'text-field__input' %>
+            <%= form.text_field :username,
+              class: 'text-field__input',
+              'aria-describedby': (user.errors[:username].any? ? 'username-error' : nil),
+              'aria-invalid': (user.errors[:username].any? ? true : nil)
+            %>
             <% if user.errors[:username].any? %>
-              <div class="text-field__error-message">
+              <small id="username-error" class="text-field__error-message">
                 <%= user.errors[:username].join(',') %>
-              </div>
+              </small>
             <% end %>
           </div>
         </div>
@@ -26,11 +30,16 @@
         <div class="grid__item grid__item--half">
           <div class="<%= text_field_classes(user.errors[:password]) %>">
             <%= form.label :password, t('password'), class: 'text-field__label' %>
-            <%= form.password_field :password, class: 'text-field__input', autocomplete: 'new-password' %>
+            <%= form.password_field :password,
+              class: 'text-field__input',
+              autocomplete: 'new-password',
+              'aria-describedby': (user.errors[:password].any? ? 'password-error' : nil),
+              'aria-invalid': (user.errors[:password].any? ? true : nil)
+            %>
             <% if user.errors[:password].any? %>
-              <div class="text-field__error-message">
+              <small id="password-error" class="text-field__error-message">
                 <%= user.errors[:password].join(',') %>
-              </div>
+              </small>
             <% end %>
           </div>
         </div>
@@ -38,11 +47,15 @@
         <div class="grid__item grid__item--half">
           <div class="<%= text_field_classes(user.errors[:password_confirmation]) %>">
             <%= form.label :password_confirmation, t('user_form.confirm_password'), class: 'text-field__label' %>
-            <%= form.password_field :password_confirmation, class: 'text-field__input' %>
+            <%= form.password_field :password_confirmation,
+              class: 'text-field__input',
+              'aria-describedby': (user.errors[:password_confirmation].any? ? 'password-confirmation-error' : nil),
+              'aria-invalid': (user.errors[:password_confirmation].any? ? true : nil)
+            %>
             <% if user.errors[:password_confirmation].any? %>
-              <div class="text-field__error-message">
+              <small id="password-confirmation-error" class="text-field__error-message">
                 <%= user.errors[:password_confirmation].join(',') %>
-              </div>
+              </small>
             <% end %>
           </div>
         </div>

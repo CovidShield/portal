@@ -7,6 +7,13 @@ export function initializeFocus() {
     return;
   }
 
+  const firstError = document.querySelector("[aria-invalid]");
+
+  if (firstError) {
+    firstError.focus();
+    return;
+  }
+
   const heading = document.querySelector("h1");
 
   if (heading) {

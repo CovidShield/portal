@@ -1,13 +1,13 @@
 <div class="modal-backdrop" id="<%= id %>">
   <div
     class="modal"
-    aria-labelledby="modal-title"
+    aria-labelledby="modal-title-<%= id %>"
     role="dialog"
     aria-modal="true"
     tabIndex="-1"
   >
     <div class="modal__header">
-      <h2 id="modal-title" class="modal__title">
+      <h2 id="modal-title-<%= id %>" class="modal__title">
         <%= title %>
       </h2>
       <button
@@ -23,7 +23,11 @@
       <%= yield %>
     </div>
     <div class="modal__footer">
-      <button class="button" type="button" data-modal-close>Close</Button>
+      <% if local_variables.include?(:footer)%>
+        <%= footer %>
+      <% else %>
+        <button class="button" type="button" data-modal-close>Close</Button>
+      <% end %>
     </div>
   </div>
 </div>

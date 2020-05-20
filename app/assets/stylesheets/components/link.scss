@@ -4,6 +4,11 @@
   transition: box-shadow 100ms ease-out;
   border-radius: $border-radius;
   padding: 2px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;

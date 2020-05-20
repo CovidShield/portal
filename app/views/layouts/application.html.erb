@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="<%= current_locale %>">
   <head>
-    <title><%= t('title') %></title>
+    <title><%= @page_title || t('title') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/logo192.png" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0">
 
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,7 +17,7 @@
   <body>
     <% if current_user %>
       <div class="top-bar">
-        <div class="top-bar__container">
+        <header class="top-bar__container">
           <div class="top-bar__group">
             <%= link_to root_path, class: 'top-bar__link' do %>
               <div class="top-bar__branding">
@@ -59,7 +59,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </header>
       </div>
     <% end %>
 
