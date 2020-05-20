@@ -89,7 +89,9 @@ en:
     add_button: "Add user"
     edit: "Edit"
     remove: "Remove"
-    confirm_delete: "Are you sure you want to remove this user?"
+    remove_user: "Remove user"
+    confirm_delete_html: "You are about to remove <strong>%{user}</strong>."
+    cannot_be_undone: "This cannot be undone."
   user_form:
     confirm_password: "Confirm password"
     permissions_label: "User permissions"
