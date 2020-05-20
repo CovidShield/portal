@@ -8,8 +8,7 @@ For more information on how this all works, read through the [COVID Shield Ratio
 
 ## Role (optional)
 
-The use of this portal is optional and you can easily integrate the code creation system into any existing system that your public health officials have access to. After you have deployed the backend, you can generate keys with [simple API calls](https://github.com/CovidShield/backend/tree/master/examples/new-key-claim). 
-
+The use of this portal is optional and you can easily integrate the code creation system into any existing system that your public health officials have access to. After you have deployed the backend, you can generate keys with [simple API calls](https://github.com/CovidShield/backend/tree/master/examples/new-key-claim).
 
 ## Local development
 
@@ -45,15 +44,15 @@ bundle exec rake db:seed
 
 ### 4. Start the Rails server
 
-You can start the rails server using the command given below (replacing the KEY_CLAIM_TOKEN and KEY_CLAIM_HOST to match your running diagnosis server config).
+You can start the rails server using the command given below (replacing the KEY_CLAIM_HOST to match your running diagnosis server config).
 
 ```ruby
-KEY_CLAIM_TOKEN=test KEY_CLAIM_HOST=localhost:3000 bundle exec rails s
+KEY_CLAIM_HOST=localhost:3000 bundle exec rails s
 ```
 
 And now you can visit the site with the URL http://localhost:3000
 
-The default username and password is `admin` and `password`.
+The default username and password is `admin@covidshield.app` and `password`.
 
 ## Who built COVID Shield?
 
