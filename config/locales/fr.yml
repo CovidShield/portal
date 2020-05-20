@@ -1,92 +1,108 @@
 fr:
   title: "COVID Shield"
-  more_info: "More information"
-  logo_alt: "COVID Shield logo"
-  username: "Username"
-  password: "Password"
+  more_info: "Plus d'information"
+  logo_alt: "logo COVID Shield"
+  username: "Nom d'utilisateur"
+  password: "Mot de passe"
   permissions: "Permissions"
-  language: "Language"
+  language: "Langue"
   language_en: "English"
   language_fr: "Français"
-  admin: "Admin"
-  staff: "Staff"
-  cancel: "Cancel"
+  admin: "Administrateur"
+  staff: "Employé"
+  cancel: "Annuler"
   menu: "Menu"
-  settings: "Settings"
-  manage_users: "Manage users"
-  sign_out: "Sign out"
+  manage_users: "Gérer les utilisateurs"
+  sign_out: "Se déconnecter"
   activerecord:
     models:
       user:
-        one: User
-        other: Users
+        one: Utilisateur
+        other: Utilisateurs
     errors:
       models:
         user:
           attributes:
             username:
-              blank: "You must enter a username"
-              taken: "Username is already taken"
+              blank: "Vous devez entrer un nom d'utilisateur"
+              taken: "Ce nom d'utilisateur existe déjà"
             password:
-              blank: "You must enter a password"
+              blank: "Vous devez entrer un mot de passe"
             password_confirmation:
-              blank: "You must confirm your password"
-              confirmation: "Password and confirmation must match"
+              blank: "Vous devez confirmer votre mot de passe"
+              confirmation: "Les deux mots de passe doivent être identiques"
   sign_in:
-    title: "COVID Shield Sign In"
-    error: "Invalid username or password"
-    username_placeholder: "Enter username"
-    password_placeholder: "Enter password"
-    sign_in: "Sign in"
+    title: "Se connecter à COVID Shield"
+    error: "Nom d'utilisateur ou mot de passe non valide"
+    username_placeholder: "Entrez le nom d'utilisateur"
+    password_placeholder: "Entrez le mot de passe"
+    sign_in: "Se connecter"
   home:
-    title: "COVID Shield Portal"
-    next_patient: "Next patient"
+    title: "Accueil"
+    next_patient: "Patient suivant"
     card1:
-      title: "Ensure patient has installed the COVID Shield app"
-      subheading: "Instruct the patient to:"
-      step1_html: "Visit <strong>http://gc.ca/covid-shield</strong>"
-      step2: "Click on either the Apple AppStore or GooglePlay button"
-      step3: "Install the app"
+      criteria_intro: "Les codes COVID Shield devraient seulement être donnés aux patients avec:"
+      criteria1: "un résultat de test positif à la COVID-19 confirmé"
+      criteria2: "{critères additionnels optionnels, tel qu'un diagnostic confirmé}"
+      hide: "Voir moins"
+      show: "Voir plus"
     card2:
-      title: "Provide patient with COVID Shield code"
-      subheading: "Instruct the patient to:"
-      step1: "Open the COVID Shield app"
-      step2: "Tap on the white section at the bottom of the screen"
-      step2_modal_title: "Step 2"
-      step2_modal_content: "Tap on the white section at the bottom of the screen."
-      step2_modal_alt: "Screenshot of COVID Shield mobile app with bottom sheet highlighted"
-      step3_html: 'Tap the <code class="inline-code">Submit code</code> button'
-      step3_modal_title: "Step 3"
-      step3_modal_content_html: 'Tap the <span class="inline-code">Submit code</span> button.'
-      step3_modal_alt: "Screenshot of COVID Shield mobile app with submit code button highlighted"
-      step4: "In the code field, enter:"
-      step4_code_expired: "This code has expired."
-      step4_generate_code: "Generate code"
-      step4_generated_code: "Generated code"
-      step4_generate_new_code: "Generate new code"
-      step5_html: 'Tap the <code class="inline-code">I agree</code> button'
-      step5_modal_title: "Step 5"
-      step5_modal_content_html: 'Tap the <span class="inline-code">I agree</span> button.'
-      step5_modal_alt: "Screenshot of COVID Shield mobile app with I agree button highlighted"
+      title: "Assurez-vous que le patient ait l'application COVID Shield installée sur son téléphone"
+      subheading: "Demandez au patient de :"
+      step1_html: "Visiter <strong>https://www.covidshield.app/download</strong>."
+      step2: "Appuyer sur l'icône de l'App store d'Apple (iPhones) ou de Google Play (Android)."
+      step3: "Installer l'application."
+    card3:
+      title: "Fournir un code COVID Shield au patient"
+      subheading: "Demandez au patient de :"
+      step1: "Appuyer sur l'icône pour ouvrir l'application COVID Shield."
+      step2: "Appuyer sur la section blanche au bas de l'écran."
+      step2_modal_title: "Étape 2"
+      step2_modal_content: "Appuyer sur la section blanche au bas de l'écran."
+      step2_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec la section blanche au bas de l'écran encadrée"
+      step3_html: 'Appuyer sur le bouton <code class="inline-code">Entrez le code</code>.'
+      step3_modal_title: "Étape 3"
+      step3_modal_content_html: 'Appuyer sur le bouton <span class="inline-code">Entrez le code</span>.'
+      step3_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Entrez le code encadré"
+      step4: "Entrer le code à 8 chiffres suivant :"
+      step4_code_expired: "Ce code est expiré."
+      step4_generate_code: "Générer un code"
+      step4_generated_code: "Code généré"
+      step4_generate_new_code: "Générer un nouveau code"
+      step5_html: 'Appuyer sur le bouton <code class="inline-code">Soumettre le code</code>.'
+      step5_modal_title: "Étape 5"
+      step5_modal_content_html: 'Appuyer sur le bouton <span class="inline-code">Soumettre le code</span>.'
+      step5_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Soumettre le code encadré"
+      step6_html: 'Appuyer sur le bouton <code class="inline-code">Accepter</code>. Ceci partagera les identifiants aléatoires de votre téléphone de façon anonyme.'
+      step6_modal_title: "Étape 6"
+      step6_modal_content_html: 'Appuyer sur le bouton <span class="inline-code">Accepter</span>.'
+      step6_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Accepter encadré"
+      step7_html: 'Appuyer sur <code class="inline-code">Autoriser</code> ou <code class="inline-code">Partager</code>.'
+      step7_modal_title: "Étape 7"
+      step7_modal_ios_content_html: 'Appuyer sur <code class="inline-code">Autoriser</code>.'
+      step7_modal_ios_alt: "Capture d'écran du message de permission d'iOS"
+      step7_modal_android_content_html: 'Appuyer sur <code class="inline-code">Partager</code>.'
+      step7_modal_android_alt: "Capture d'écran du message de permission d'Android"
+      step8: "Vous n'avez pas besoin de faire autre chose pour aujourd'hui. Vous allez recevoir chaque jour, pour les 13 prochains jours, une notification vous demandant la permission de partager vos nouveaux identifiants aléatoires."
   users_index:
-    title: "Manage users"
-    add_button: "Add user"
-    edit: "Edit"
-    remove: "Remove"
-    remove_user: "Remove user"
-    confirm_delete_html: "You are about to remove <strong>%{user}</strong>."
-    cannot_be_undone: "This cannot be undone."
+    title: "Gérer les utilisateurs"
+    add_button: "Ajouter un utilisateur"
+    edit: "Modifier"
+    remove: "Supprimer"
+    remove_user: "Supprimer un utilisateur"
+    confirm_delete_html: "Vous êtes sur le point de supprimer <strong>%{user}</strong>."
+    cannot_be_undone: "Cette action ne peut pas être annulée."
   user_form:
-    confirm_password: "Confirm password"
-    permissions_label: "User permissions"
-    permissions_help_text_admin: "Admin accounts can add and remove users."
-    permissions_help_text_staff: "Staff accounts cannot add or remove users."
+    confirm_password: "Confirmer le mot de passe"
+    permissions_label: "Permissions de l'utilisateur"
+    permissions_help_text_admin: "Les administrateurs peuvent ajouter et supprimer des utilisateurs."
+    permissions_help_text_staff: "Les employés ne peuvent pas ajouter ou supprimer des utilisateurs."
   add_user:
-    title: "Add user"
-    add_user_button: "Add user"
+    title: "Ajouter un utilisateur"
+    add_user_button: "Ajouter un utilisateur"
   edit_user:
-    title: "Edit user"
-    update_user_button: "Save changes"
+    title: "Modifier un utilisateur"
+    update_user_button: "Enregistrer"
   settings:
-    title: "Settings"
-    update_settings_button: "Save changes"
+    title: "Réglages"
+    update_settings_button: "Enregistrer"
