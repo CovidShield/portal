@@ -79,8 +79,10 @@ fr:
       step6_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Accepter encadré"
       step7_html: 'Appuyer sur <code class="inline-code">Autoriser</code> ou <code class="inline-code">Partager</code>.'
       step7_modal_title: "Étape 7"
-      step7_modal_content_html: 'Appuyer sur <code class="inline-code">Autoriser</code> ou <code class="inline-code">Partager</code>.'
-      step7_modal_alt: "Capture d'écran des messages de permission d'iOS et Android"
+      step7_modal_ios_content_html: 'Appuyer sur <code class="inline-code">Autoriser</code>.'
+      step7_modal_ios_alt: "Capture d'écran du message de permissions d'iOS"
+      step7_modal_android_content_html: 'Appuyer sur <code class="inline-code">Partager</code>.'
+      step7_modal_android_alt: "Capture d'écran du message de permissions d'Android"
       step8: "Vous n'avez pas besoin de faire autre chose pour aujourd'hui. Vous allez recevoir chaque jour, pour les 13 prochains jours, une notification vous demandant la permission de partager vos nouveaux identifiants aléatoires."
   users_index:
     title: "Gérer les utilisateurs"
