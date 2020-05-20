@@ -1,13 +1,13 @@
 <div class="modal-backdrop" id="<%= id %>">
   <div
     class="modal"
-    aria-labelledby="modal-title"
+    aria-labelledby="modal-title-<%= id %>"
     role="dialog"
     aria-modal="true"
     tabIndex="-1"
   >
     <div class="modal__header">
-      <h2 id="modal-title" class="modal__title">
+      <h2 id="modal-title-<%= id %>" class="modal__title">
         <%= title %>
       </h2>
       <button
