@@ -79,8 +79,10 @@ en:
       step6_modal_alt: "Screenshot of COVID Shield mobile app with I agree button highlighted"
       step7_html: 'Tap either <code class="inline-code">Allow</code> or <code class="inline-code">Share</code>.'
       step7_modal_title: "Step 7"
-      step7_modal_content_html: 'Tap either <code class="inline-code">Allow</code> or <code class="inline-code">Share</code>.'
-      step7_modal_alt: "Screenshot of iOS and Android permissions pop-ups"
+      step7_modal_ios_content_html: 'Tap <code class="inline-code">Allow</code>.'
+      step7_modal_ios_alt: "Screenshot of iOS permissions pop-ups"
+      step7_modal_android_content_html: 'Tap <code class="inline-code">Share</code>.'
+      step7_modal_android_alt: "Screenshot of Android permissions pop-ups"
       step8: "You don’t need to do anything else today. You will receive a notification each day for the next 13 days requesting your permission to share any new random IDs."
   users_index:
     title: "Manage users"
