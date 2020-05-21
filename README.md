@@ -10,6 +10,11 @@ For more information on how this all works, read through the [COVID Shield Ratio
 
 The use of this portal is optional and you can easily integrate the code creation system into any existing system that your public health officials have access to. After you have deployed the backend, you can generate keys with [simple API calls](https://github.com/CovidShield/backend/tree/master/examples/new-key-claim).
 
+## User Experience
+
+- [Design files on Figma](https://www.figma.com/file/b76OYDhkTKJCaqDfVQybQY/Open-Source-COVID-Shield?node-id=68%3A167)
+- [Glossary of terms](https://github.com/CovidShield/rationale/blob/master/GLOSSARY.md)
+
 ## Local development
 
 ### Prerequisites
