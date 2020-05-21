@@ -12,7 +12,7 @@
   border: 1px solid $color-border;
   top: calc(100% + #{$spacing-tight});
   right: 0;
-  width: 180px;
+  width: 200px;
 
   [data-popover-active] & {
     display: block;

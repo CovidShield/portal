@@ -60,28 +60,28 @@ fr:
       step2_modal_title: "Étape 2"
       step2_modal_content: "Appuyer sur la section blanche au bas de l'écran."
       step2_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec la section blanche au bas de l'écran encadrée"
-      step3_html: 'Appuyer sur le bouton <code class="inline-code">Entrez le code</code>.'
+      step3_html: "Appuyer sur le bouton <strong>Entrez le code</strong>."
       step3_modal_title: "Étape 3"
-      step3_modal_content_html: 'Appuyer sur le bouton <span class="inline-code">Entrez le code</span>.'
+      step3_modal_content_html: "Appuyer sur le bouton <strong>Entrez le code</strong>."
       step3_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Entrez le code encadré"
       step4: "Entrer le code à 8 chiffres suivant :"
       step4_code_expired: "Ce code est expiré."
       step4_generate_code: "Générer un code"
       step4_generated_code: "Code généré"
       step4_generate_new_code: "Générer un nouveau code"
-      step5_html: 'Appuyer sur le bouton <code class="inline-code">Soumettre le code</code>.'
+      step5_html: "Appuyer sur le bouton <strong>Soumettre le code</strong>."
       step5_modal_title: "Étape 5"
-      step5_modal_content_html: 'Appuyer sur le bouton <span class="inline-code">Soumettre le code</span>.'
+      step5_modal_content_html: "Appuyer sur le bouton <strong>Soumettre le code</strong>."
       step5_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Soumettre le code encadré"
-      step6_html: 'Appuyer sur le bouton <code class="inline-code">Accepter</code>. Ceci partagera les identifiants aléatoires de votre téléphone de façon anonyme.'
+      step6_html: "Appuyer sur le bouton <strong>Accepter</strong>. Ceci partagera les identifiants aléatoires de votre téléphone de façon anonyme."
       step6_modal_title: "Étape 6"
-      step6_modal_content_html: 'Appuyer sur le bouton <span class="inline-code">Accepter</span>.'
+      step6_modal_content_html: "Appuyer sur le bouton <strong>Accepter</strong>."
       step6_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Accepter encadré"
       step7_html: 'Appuyer sur <code class="inline-code">Autoriser</code> ou <code class="inline-code">Partager</code>.'
       step7_modal_title: "Étape 7"
-      step7_modal_ios_content_html: 'Appuyer sur <code class="inline-code">Autoriser</code>.'
+      step7_modal_ios_content_html: "Appuyer sur <strong>Autoriser</strong>."
       step7_modal_ios_alt: "Capture d'écran du message de permission d'iOS"
-      step7_modal_android_content_html: 'Appuyer sur <code class="inline-code">Partager</code>.'
+      step7_modal_android_content_html: "Appuyer sur <strong>Partager</strong>."
       step7_modal_android_alt: "Capture d'écran du message de permission d'Android"
       step8: "Vous n'avez pas besoin de faire autre chose pour aujourd'hui. Vous allez recevoir chaque jour, pour les 13 prochains jours, une notification vous demandant la permission de partager vos nouveaux identifiants aléatoires."
   users_index:
