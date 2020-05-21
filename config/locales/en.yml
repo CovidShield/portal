@@ -60,28 +60,28 @@ en:
       step2_modal_title: "Step 2"
       step2_modal_content: "Tap the white section at the bottom of the screen."
       step2_modal_alt: "Screenshot of COVID Shield mobile app with bottom sheet highlighted"
-      step3_html: 'Tap the <code class="inline-code">Enter code</code> button.'
+      step3_html: "Tap the <strong>Enter code</strong> button."
       step3_modal_title: "Step 3"
-      step3_modal_content_html: 'Tap the <span class="inline-code">Enter code</span> button.'
+      step3_modal_content_html: "Tap the <strong>Enter code</strong> button."
       step3_modal_alt: "Screenshot of COVID Shield mobile app with Enter code button highlighted"
       step4: "Enter the following 8 digit code:"
       step4_code_expired: "This code has expired."
       step4_generate_code: "Generate code"
       step4_generated_code: "Generated code"
       step4_generate_new_code: "Generate new code"
-      step5_html: 'Tap the <code class="inline-code">Submit code</code> button.'
+      step5_html: "Tap the <strong>Submit code</strong> button."
       step5_modal_title: "Step 5"
-      step5_modal_content_html: 'Tap the <span class="inline-code">Submit code</span> button.'
+      step5_modal_content_html: "Tap the <strong>Submit code</strong> button."
       step5_modal_alt: "Screenshot of COVID Shield mobile app with Submit code button highlighted"
-      step6_html: 'Tap the <code class="inline-code">I agree</code> button. This will anonymously share the random IDs on your phone.'
+      step6_html: "Tap the <strong>I agree</strong> button. This will anonymously share the random IDs on your phone."
       step6_modal_title: "Step 6"
-      step6_modal_content_html: 'Tap the <span class="inline-code">I agree</span> button.'
+      step6_modal_content_html: "Tap the <strong>I agree</strong> button."
       step6_modal_alt: "Screenshot of COVID Shield mobile app with I agree button highlighted"
-      step7_html: 'Tap either <code class="inline-code">Allow</code> or <code class="inline-code">Share</code>.'
+      step7_html: "Tap either <strong>Allow</strong> or <strong>Share</strong>."
       step7_modal_title: "Step 7"
-      step7_modal_ios_content_html: 'Tap <code class="inline-code">Allow</code>.'
+      step7_modal_ios_content_html: "Tap <strong>Allow</strong>."
       step7_modal_ios_alt: "Screenshot of iOS permissions pop-ups"
-      step7_modal_android_content_html: 'Tap <code class="inline-code">Share</code>.'
+      step7_modal_android_content_html: "Tap <strong>Share</strong>."
       step7_modal_android_alt: "Screenshot of Android permissions pop-ups"
       step8: "You don’t need to do anything else today. You will receive a notification each day for the next 13 days requesting your permission to share any new random IDs."
   users_index:
