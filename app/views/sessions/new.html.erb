@@ -13,11 +13,11 @@
         <% end %>
         <div class="text-field">
           <%= label_tag :username, t('sign_in.username'), class: 'text-field__label' %>
-          <%= text_field_tag :username, '', class: 'text-field__input', placeholder: t('sign_in.username_placeholder') %>
+          <%= text_field_tag :username, '', class: 'text-field__input', placeholder: t('sign_in.username_placeholder'), autocomplete: 'username' %>
         </div>
         <div class="text-field">
           <%= label_tag :password, t('sign_in.password'), class: 'text-field__label' %>
-          <%= password_field_tag :password, '', class: 'text-field__input', placeholder: t('sign_in.password_placeholder') %>
+          <%= password_field_tag :password, '', class: 'text-field__input', placeholder: t('sign_in.password_placeholder'), autocomplete: 'current-password' %>
         </div>
       </div>
       <div class="card__footer">
