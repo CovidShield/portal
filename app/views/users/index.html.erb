@@ -11,8 +11,9 @@
         <table class="index__table">
           <thead class="index__header">
             <tr>
-              <th class="index__heading"><%= t('username') %></th>
-              <th class="index__heading"><%= t('permissions') %></th>
+              <th class="index__heading" scope="col"><%= t('username') %></th>
+              <th class="index__heading" scope="col"><%= t('permissions') %></th>
+              <th></th>
               <th></th>
             </tr>
           </thead>
@@ -20,7 +21,7 @@
           <tbody>
             <% @users.each do |user| %>
               <tr class="index__row">
-                <td class="index__cell"><%= user.username %></td>
+                <th class="index__cell" scope="row"><%= user.username %></th>
                 <td class="index__cell">
                   <% if user.admin %>
                     <%= t('admin') %>
