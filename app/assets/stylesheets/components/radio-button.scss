@@ -45,7 +45,7 @@ $radio-border-size: 1px;
 
 .radio-button__target {
   background-color: transparent;
-  border: $radio-border-size solid $color-border;
+  border: $radio-border-size solid $color-input-border;
   width: $radio-size + $radio-padding + ($radio-border-size * 2);
   height: $radio-size + $radio-padding + ($radio-border-size * 2);
   padding: ($radio-padding / 2);
