@@ -7,7 +7,7 @@ $caret-size: 8px;
   padding: $spacing-tight;
   width: 100%;
   margin: 0;
-  border: 1px solid $color-border;
+  border: $border-input;
   border-radius: $border-radius;
   background-color: $color-white;
   -moz-appearance: none;

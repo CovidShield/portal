@@ -9,6 +9,7 @@ $color-white: #ffffff;
 $color-black: #000000;
 
 $color-border: #cfcfcf;
+$color-input-border: #949494;
 $color-background: #f5f5f5;
 $color-surface: #ffffff;
 $color-text: #212529;
@@ -27,6 +28,7 @@ $font-family: "Nunito Sans", sans-serif;
 
 /** Borders **/
 $border-default: 1px solid $color-border;
+$border-input: 1px solid $color-input-border;
 
 /** Border radii **/
 $border-radius: 4px;
