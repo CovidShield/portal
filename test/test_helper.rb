@@ -10,6 +10,6 @@ class ActiveSupport::TestCase
   fixtures :all
 
   def sign_in_as(user)
-    session[:user_id] = user.id
+    post sessions_url, params: { username: user.username, password: 'secret' }
   end
 end
