@@ -12,11 +12,11 @@
           <div class="error" id="alert" data-alert><%= alert %></div>
         <% end %>
         <div class="text-field">
-          <%= label_tag :username, t('sign_in.username'), class: 'text-field__label' %>
+          <%= label_tag :username, t('username'), class: 'text-field__label' %>
           <%= text_field_tag :username, '', class: 'text-field__input', placeholder: t('sign_in.username_placeholder'), autocomplete: 'username' %>
         </div>
         <div class="text-field">
-          <%= label_tag :password, t('sign_in.password'), class: 'text-field__label' %>
+          <%= label_tag :password, t('password'), class: 'text-field__label' %>
           <%= password_field_tag :password, '', class: 'text-field__input', placeholder: t('sign_in.password_placeholder'), autocomplete: 'current-password' %>
         </div>
       </div>
@@ -27,4 +27,11 @@
       </div>
     </div>
   <% end %>
+  <div class="login__footer">
+    <% if I18n.locale == :en %>
+      <%= link_to t('language_fr'), login_path(locale: 'fr'), class: 'link' %>
+    <% else %>
+      <%= link_to t('language_en'), login_path(locale: 'en'), class: 'link' %>
+    <% end %>
+  </div>
 </div>
