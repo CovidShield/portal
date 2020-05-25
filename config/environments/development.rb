@@ -62,6 +62,8 @@ Rails.application.configure do
 end
 Rails.application.configure do
   config.hosts << "portal.myshopify.io"
+  config.hosts << "127.0.0.1"
+  config.hosts << "localhost"
 end
 
 Rails.application.configure do
