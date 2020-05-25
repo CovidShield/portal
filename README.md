@@ -118,7 +118,7 @@ Open a new terminal window, navigating into the base of the repo, and start the 
 You can start the rails server using the command given below (replacing the KEY_CLAIM_HOST to match your running diagnosis server config).
 
 ```ruby
-KEY_CLAIM_HOST=localhost:3000 bundle exec rails s
+KEY_CLAIM_HOST=127.0.0.1:8000 bundle exec rails s
 ```
 
 And now you can visit the site with the URL http://localhost:3000
