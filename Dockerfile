@@ -1,7 +1,7 @@
-FROM ruby:2-alpine
-LABEL maintainer="someone@covidshield.app"
-LABEL app.covidshield.name="Covid Shield Portal"
-LABEL app.covidshield.description="The Web Portal for CovidShield.app"
+FROM ruby:2-alpine@sha256:2f64029e66742642f94805bece89304c8a644fb565dd3170e841bc11ebea181d
+LABEL maintainer="security@covidshield.app"
+LABEL app.covidshield.name="COVID Shield Portal"
+LABEL app.covidshield.description="The Web Portal for covidshield.app"
 LABEL app.covidshield.url="https://covidshield.app/"
 LABEL app.covidshield.docker.cmd="docker run -v `pwd`:/app -p 3000:3000 -d covidshield/portal"
 
