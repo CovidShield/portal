@@ -36,3 +36,5 @@ yarn-debug.log*
 
 config/terraform/*/.terraform/*
 config/terraform/*/terraform.tfstate*
+
+.DS_Store
