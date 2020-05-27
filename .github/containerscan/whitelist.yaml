@@ -2,3 +2,4 @@ general:
   vulnerabilities:
     - NSWG-ECO-516
     - CVE-2020-8130
+    - CVE-2020-8165
