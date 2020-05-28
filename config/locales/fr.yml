@@ -41,7 +41,7 @@ fr:
     title: "Accueil"
     next_patient: "Patient suivant"
     card1:
-      criteria_intro: "Les codes COVID Shield devraient seulement être donnés aux patients avec:"
+      criteria_intro: "Les codes COVID Shield devraient seulement être donnés aux patients avec :"
       criteria1: "un résultat de test positif à la COVID-19 confirmé"
       criteria2: "{critères additionnels optionnels, tel qu'un diagnostic confirmé}"
       hide: "Voir moins"
