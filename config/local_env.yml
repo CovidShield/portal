@@ -1,5 +1,0 @@
-KEY_CLAIM_TOKEN: thisisatoken
-KEY_CLAIM_HOST: localhost:8000
-DATABASE_HOST: localhost
-DATABASE_USER: root
-DATABASE_PASSWORD:
