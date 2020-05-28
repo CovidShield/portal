@@ -62,6 +62,8 @@ export function initializeCodeGenerator() {
     if (!response || response.status !== 200) {
       codeBanner.dataset.hidden = "true";
       delete errorMessage.dataset.hidden;
+      errorMessage.tabIndex = -1;
+      errorMessage.focus();
       generateButton.disabled = false;
       return;
     }
