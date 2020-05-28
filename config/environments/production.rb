@@ -109,4 +109,9 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  Rails.application.config.session_store :cookie_store,
+                                       key: '_portal_session',
+                                       expire_after: 7. days,
+                                       secure: false,
+                                       same_site: :lax
 end

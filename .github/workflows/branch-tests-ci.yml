@@ -1,0 +1,52 @@
+name: Tests
+on: [pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: portal_test
+        ports:
+          - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "2.7.1"
+      - name: Verify MySQL connection from host
+        run: |
+          sudo apt-get install -y mysql-client libmysqlclient-dev
+          mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports[3306] }} --user=root -e "SHOW GRANTS FOR 'root'@'localhost'"
+          mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports[3306] }} --user=root mysql
+      - name: Install dependencies
+        run: |
+          bundle install --jobs 4 --retry 3
+          yarn install
+      - name: Setup database
+        env:
+          RAILS_ENV: test
+          DATABASE_HOST: 127.0.0.1
+          DATABASE_PORT: ${{ job.services.mysql.ports[3306] }}
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+      - name: Run unit tests
+        env:
+          RAILS_ENV: test
+          DATABASE_HOST: 127.0.0.1
+          DATABASE_PORT: ${{ job.services.mysql.ports[3306] }}
+          KEY_CLAIM_TOKEN: test
+          KEY_CLAIM_HOST: test.serverexample.com
+        run: bundle exec rails test
+      - name: Run system tests
+        env:
+          RAILS_ENV: test
+          DATABASE_HOST: 127.0.0.1
+          DATABASE_PORT: ${{ job.services.mysql.ports[3306] }}
+          KEY_CLAIM_TOKEN: test
+          KEY_CLAIM_HOST: test.serverexample.com
+        run: bundle exec rails test:system

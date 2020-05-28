@@ -33,8 +33,9 @@ commands:
     run: bin/rails test
 
 env:
-  KEY_CLAIM_TOKEN: test
+  KEY_CLAIM_TOKEN: thisisatoken
   KEY_CLAIM_HOST: covidshield-submit.myshopify.io
+  DATABASE_HOST: portal.railgun
 
 # These use fuzzy-matching, so you can (e.g.) `dev open app`
 open:

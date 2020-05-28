@@ -8,7 +8,7 @@ class KeysController < ApplicationController
     token = if Rails.env.production?
       Rails.application.credentials.key_claim_token
     else
-      'test'
+      ENV['KEY_CLAIM_TOKEN']
     end
     header = {'Authorization': "Bearer #{token}" }
     http = Net::HTTP.new(uri.host, uri.port)
