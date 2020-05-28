@@ -76,6 +76,9 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  # Allow a different credentials file for use with e.g. docker-compose
+  config.credentials.content_path = ENV['RAILS_CREDENTIALS_PATH'] if ENV['RAILS_CREDENTIALS_PATH'].present?
+
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')

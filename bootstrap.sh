@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+###
+# Development Only
+###
+
 mysql_healthy() {
   (docker ps | grep portal_mysql_1 | grep healthy) >/dev/null 2>&1
 }
@@ -16,4 +20,4 @@ done
 printf " \x1b[32mdone\x1b[0m\n"
 
 echo "Bootstrapping the database..."
-docker-compose run -e RAILS_BOOTSTRAP=1 portal /start-server.sh
+docker-compose run portal bundle exec rake portal:bootstrap
