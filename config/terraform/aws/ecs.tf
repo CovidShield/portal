@@ -53,6 +53,8 @@ resource "aws_ecs_service" "covidshield_portal" {
   task_definition = aws_ecs_task_definition.covidshield_portal.arn
   desired_count   = 2
   launch_type     = "FARGATE"
+  # Enable the new ARN format to propagate tags to containers
+  propagate_tags = "SERVICE"
 
   deployment_minimum_healthy_percent = 50
   deployment_maximum_percent         = 200
@@ -71,5 +73,9 @@ resource "aws_ecs_service" "covidshield_portal" {
     target_group_arn = aws_lb_target_group.covidshield_portal.arn
     container_name   = "portal"
     container_port   = 3000
+  }
+
+  tags = {
+    (var.billing_tag_key) = var.billing_tag_value
   }
 }

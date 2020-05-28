@@ -42,9 +42,8 @@ class UsersTest < ApplicationSystemTestCase
   test "deleting a user" do
     login_as_admin
     visit users_url
-    page.accept_confirm do
-      click_on "Remove", match: :first
-    end
+    click_on "Remove", match: :first
+    click_on "Remove user", match: :first
 
     assert_selector "h1", text: "Manage users"
   end

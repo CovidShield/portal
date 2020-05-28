@@ -13,9 +13,10 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  host: portal.railgun
+  username: <%= ENV.fetch("DATABASE_USERNAME") { 'root' } %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") { '' } %>
+  host: <%= ENV.fetch("DATABASE_HOST") { 'localhost' } %>
+  port: <%= ENV.fetch("DATABASE_PORT") { 3306 } %>
 
 development:
   <<: *default

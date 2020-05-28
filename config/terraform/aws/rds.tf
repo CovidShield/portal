@@ -12,6 +12,8 @@ resource "aws_db_instance" "covidshield" {
   engine_version            = "5.7"
   final_snapshot_identifier = "portal-${random_string.random.result}"
   skip_final_snapshot       = false
+  multi_az                  = true
+  storage_encrypted         = true
   instance_class            = var.rds_portal_instance_class
   name                      = var.rds_portal_db_name
   username                  = var.rds_portal_db_user
