@@ -4,26 +4,16 @@
 
 # Task Definition
 
-data "aws_ecr_repository" "covidshield_portal" {
-  name = "portal"
-}
-
 data "github_branch" "portal" {
   repository = "portal"
   branch     = "master"
-}
-
-data "aws_ecr_image" "covidshield_portal" {
-  registry_id     = data.aws_ecr_repository.covidshield_portal.registry_id
-  repository_name = data.aws_ecr_repository.covidshield_portal.name
-  image_tag       = coalesce(var.github_sha, data.github_branch.portal.sha)
 }
 
 data "template_file" "covidshield_portal_task" {
   template = file("task-definitions/covidshield_portal.json")
 
   vars = {
-    image                    = "${data.aws_ecr_repository.covidshield_portal.repository_url}:${element(sort(data.aws_ecr_image.covidshield_portal.image_tags), 0)}"
+    image                    = "covidshield/portal:${coalesce(var.github_sha, data.github_branch.portal.sha)}"
     awslogs-group            = data.terraform_remote_state.backend.outputs.cloudwatch_log_group.name
     awslogs-region           = var.region
     awslogs-stream-prefix    = "ecs-${var.ecs_portal_name}"
@@ -63,6 +53,8 @@ resource "aws_ecs_service" "covidshield_portal" {
   task_definition = aws_ecs_task_definition.covidshield_portal.arn
   desired_count   = 2
   launch_type     = "FARGATE"
+  # Enable the new ARN format to propagate tags to containers
+  propagate_tags = "SERVICE"
 
   deployment_minimum_healthy_percent = 50
   deployment_maximum_percent         = 200
@@ -81,5 +73,9 @@ resource "aws_ecs_service" "covidshield_portal" {
     target_group_arn = aws_lb_target_group.covidshield_portal.arn
     container_name   = "portal"
     container_port   = 3000
+  }
+
+  tags = {
+    (var.billing_tag_key) = var.billing_tag_value
   }
 }
