@@ -1,24 +1,35 @@
-# Contributing
+# Contributing Guidelines
 
-Thank you for considering contributing to COVID Shield!
+Welcome, and thank you for considering contributing to COVID Shield!
 
 We’d love to get your issues (if you find any bugs) and PRs (if you have any fixes)!
 
+- [Code of Conduct](#code-of-conduct)
+- [Reporting Security Issues](#reporting-security-issues)
+- [Contributing](#contributing)
+  - [Contributing Documentation](#contributing-documentation)
+  - [Contributing Code](#contributing-code)
+- [Running COVID Shield](#running-covid-shield)
+  - [From Scratch](#from-scratch)
+
+## Code of Conduct
+
 First, please review this document and the [Code of Conduct](CODE_OF_CONDUCT.md).
 
-# Reporting security issues
+## Reporting Security Issues
 
 COVID Shield takes security very seriously. In the interest of coordinated disclosure,
 we request that any potential vulnerabilities be reported privately in accordance with
 our [security policy](SECURITY.md).
 
-## Contributing documentation and non-code changes
+## Contributing
+
+### Contributing Documentation
 
 If you'd like to contribute a documentation or static file change, please
-feel free to fork the project in Github and open a PR from that fork against
-this repository.
+feel free to fork the project in Github and open a PR from that fork against this repository.
 
-## Contributing code
+### Contributing Code
 
 If you'd like to contribute code changes, the following steps will help you
 setup a local development environment. If you're a Shopify employee, `dev up`
@@ -30,9 +41,11 @@ If you're not at Shopify, please see below.
 Once you're happy with your changes, please fork the repository and push your
 code to your fork, then open a PR against this repository.
 
-## Developing Locally
+## Running COVID Shield
 
-### Prerequisites
+### From Scratch
+
+#### Prerequisites
 
 The setup steps expect the following tools to be installed on the system:
 
@@ -42,19 +55,19 @@ The setup steps expect the following tools to be installed on the system:
 * [Rails](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails-installing-rails)
 * [COVID Shield Diagnosis Server](https://github.com/CovidShield/server)
 
-### Running
+#### Running
 
-#### 1. Check out the repository
+1. Check out the repository
 
 ```bash
 git clone git@github.com:CovidShield/portal.git
 ```
 
-#### 2. Update database.yml file
+2. Update database.yml file
 
 Update the database.yml file with your MySQL configuration as required.
 
-#### 3. Create and set up the database
+3. Create and set up the database
 
 Run the following commands to create and set up the database.
 
@@ -64,7 +77,7 @@ bundle exec rake db:setup
 bundle exec rake db:seed
 ```
 
-#### 4. Start the Rails server
+4. Start the Rails server
 
 You can start the rails server using the command given below (replacing the KEY_CLAIM_HOST to match your running diagnosis server config).
 
