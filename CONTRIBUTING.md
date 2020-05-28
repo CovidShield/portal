@@ -25,6 +25,8 @@ setup a local development environment. If you're a Shopify employee, `dev up`
 will install the above dependencies and `dev {console,test,etc.}` will work
 as you'd expect.
 
+If you're not at Shopify, please see below.
+
 Once you're happy with your changes, please fork the repository and push your
 code to your fork, then open a PR against this repository.
 
@@ -67,7 +69,7 @@ bundle exec rake db:seed
 You can start the rails server using the command given below (replacing the KEY_CLAIM_HOST to match your running diagnosis server config).
 
 ```ruby
-KEY_CLAIM_HOST=localhost:3000 bundle exec rails s
+KEY_CLAIM_HOST=localhost:8000 bundle exec rails s
 ```
 
 And now you can visit the site with the URL http://localhost:3000
