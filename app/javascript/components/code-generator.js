@@ -71,6 +71,7 @@ export function initializeCodeGenerator() {
     const data = await response.json();
 
     expiredMessage.dataset.hidden = "true";
+    errorMessage.dataset.hidden = "true";
     emptyResult.dataset.hidden = "true";
     delete codeBanner.dataset.hidden;
     codeResult.innerHTML = formatCode(data.key);
