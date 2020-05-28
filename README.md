@@ -22,22 +22,82 @@ The use of this portal is optional and you can easily integrate the code creatio
 The setup steps expect the following tools to be installed on the system:
 
 - [Ruby](https://guides.rubyonrails.org/getting_started.html#installing-ruby)
+- [Rails](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails-installing-rails)
 - [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
 - [Node.js](https://guides.rubyonrails.org/getting_started.html#installing-node-js-and-yarn)
-- [Rails](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails-installing-rails)
-- [COVID Shield Diagnosis Server](https://github.com/CovidShield/backend)
+- [Webpack](https://github.com/webpack/webpack#install)
+- [Yarn](https://yarnpkg.com/getting-started/install#global-install)
+- [COVID Shield Diagnosis Server](https://github.com/CovidShield/server)
+- [Docker/Docker Compose](https://docs.docker.com/get-started/#set-up-your-docker-environment)
 
-### 1. Check out the repository
+### Check out the repository
 
 ```bash
 git clone git@github.com:CovidShield/portal.git
 ```
 
-### 2. Update database.yml file
+### Install dependencies
 
-Update the database.yml file with your MySQL configuration as required.
+```bash
+# If you don't have the bundler gem, do this next line too:
+# gem install bundler
 
-### 3. Create and set up the database
+bundle install
+```
+
+On MacOS, you may get issues installing the `mysql2` Gem. If you have [Homebrew](https://brew.sh/), you can install it this way:
+
+```bash
+brew install mysql openssl
+gem install mysql2 -- --with-cflags=\"-I/usr/local/opt/openssl@1.1/include\" --with-ldflags=\"-L/usr/local/opt/openssl@1.1/lib\"
+bundle install
+```
+### (Optional) Create a new MySQL Database using Docker
+
+If you don't already have a local MySQL database, you can create one easily.
+
+First, create a directory for the local data storage:
+
+```bash
+mkdir mysql-data
+```
+
+Second, start the database using Docker:
+
+```bash
+docker run -it --rm -p 3306:3306 --name portal-db -v $PWD/mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=stayhealthy -d mysql
+```
+
+This will create a database with the following properties:
+
+- IP: `127.0.0.1`
+- Port: `3306`
+- User: `root`
+- Password: `stayhealthy`
+
+To kill it later, use:
+
+```
+docker kill portal-db
+```
+
+### Update database.yml file
+
+Update the [database.yml](config/database.yml) file with your MySQL configuration as required.
+
+If you're using the Docker-based MySQL from the above section, your `default` section will look like this:
+
+```yaml
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: stayhealthy
+  host: 127.0.0.1
+```
+
+### Create and set up the database
 
 Run the following commands to create and set up the database.
 
@@ -47,12 +107,18 @@ bundle exec rake db:setup
 bundle exec rake db:seed
 ```
 
-### 4. Start the Rails server
+### Start the Webpack Server
+
+Open a new terminal window, navigating into the base of the repo, and start the Webpack server:
+
+`./bin/webpack -w`
+
+### Start the Rails server
 
 You can start the rails server using the command given below (replacing the KEY_CLAIM_HOST to match your running diagnosis server config).
 
 ```ruby
-KEY_CLAIM_HOST=localhost:3000 bundle exec rails s
+KEY_CLAIM_HOST=127.0.0.1:8000 bundle exec rails s
 ```
 
 And now you can visit the site with the URL http://localhost:3000
