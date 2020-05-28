@@ -41,50 +41,80 @@ If you're not at Shopify, please see below.
 Once you're happy with your changes, please fork the repository and push your
 code to your fork, then open a PR against this repository.
 
-## Running COVID Shield
+## Running the COVID Shield portal
 
-### From Scratch
-
-#### Prerequisites
+### Prerequisites
 
 The setup steps expect the following tools to be installed on the system:
 
-* [Ruby](https://guides.rubyonrails.org/getting_started.html#installing-ruby)
-* [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
-* [Node.js](https://guides.rubyonrails.org/getting_started.html#installing-node-js-and-yarn)
-* [Rails](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails-installing-rails)
-* [COVID Shield Diagnosis Server](https://github.com/CovidShield/server)
+- [Ruby - 2.7.1](https://guides.rubyonrails.org/getting_started.html#installing-ruby)
+- [MySQL - 5.7](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+- [Node.js - 12.17.0](https://guides.rubyonrails.org/getting_started.html#installing-node-js-and-yarn)
+- [Yarn - 1.22.0](https://guides.rubyonrails.org/getting_started.html#installing-node-js-and-yarn)
+- [Rails - 6.0.3](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails-installing-rails)
+- [COVID Shield Diagnosis Server](https://github.com/CovidShield/backend)
 
-#### Running
 
-1. Check out the repository
+### Running
+#### 1. Clone the repository
 
 ```bash
 git clone git@github.com:CovidShield/portal.git
 ```
 
-2. Update database.yml file
+#### 2. Setup local environment
 
-Update the database.yml file with your MySQL configuration as required.
+There are several environment variables you can set to configure the application.
 
-3. Create and set up the database
+To configure these:
+1. Copy `config/local_env.yml.sample` to `config/local_env.yml`
+1. Open `config/local_env.yml` and edit the values as needed
 
-Run the following commands to create and set up the database.
+The available variables you can configure are:
+* `DATABASE_HOST` - The host the MySQL server is running on (defaults to `localhost`)
+* `DATABASE_USER` - The user MySQL is configured with for acces (defaults to `root`)
+* `DATABASE_PASSWORD` - The password for the MySQL user (defaults to blank)
+* `KEY_CLAIM_HOST` - The host the COVID Shield server is running on
+* `KEY_CLAIM_TOKEN` - The token the COVID Shield server is configured to use
+
+#### 3. Install dependencies
+
+```bash
+bundle install
+yarn install
+```
+
+#### 4. Create and set up the database
+
+Run the following commands to create and set up the development database.
 
 ```ruby
 bundle exec rake db:create
-bundle exec rake db:setup
+bundle exec rake db:migrate
 bundle exec rake db:seed
 ```
 
-4. Start the Rails server
+#### 5. Start the Rails server
 
-You can start the rails server using the command given below (replacing the KEY_CLAIM_HOST to match your running diagnosis server config).
+You can start the rails server using the command given below replacing the `KEY_CLAIM_HOST` to match the URL of your running diagnosis server config and the `KEY_CLAIM_TOKEN` to match the token it is running with.
 
 ```ruby
-KEY_CLAIM_HOST=localhost:8000 bundle exec rails s
+bundle exec rails server
 ```
 
-And now you can visit the site with the URL http://localhost:8000
+And now you can visit the portal with the URL http://localhost:3000
 
 The default username and password is `admin@covidshield.app` and `password`.
+
+### Testing
+
+### Running the controller tests
+
+```ruby
+bundle exec rails test
+```
+
+### Running the system tests
+```ruby
+bundle exec rails test:system
+```
