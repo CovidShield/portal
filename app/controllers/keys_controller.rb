@@ -15,6 +15,12 @@ class KeysController < ApplicationController
     http.use_ssl = uri.scheme == 'https'
     request = Net::HTTP::Post.new(uri.request_uri, header)
     response = http.request(request)
+
+    if response.code != '200'    
+      render status: response.code
+      return
+    end
+
     @key = response.body
     render text: @key
   end

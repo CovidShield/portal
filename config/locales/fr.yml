@@ -65,6 +65,7 @@ fr:
       step3_modal_content_html: "Appuyer sur le bouton <strong>Entrez le code</strong>."
       step3_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec le bouton Entrez le code encadré"
       step4: "Entrer le code à 8 chiffres suivant :"
+      step4_code_error: "Une erreur s'est produite lors de la génération d'un code."
       step4_code_expired: "Ce code est expiré."
       step4_generate_code: "Générer un code"
       step4_generated_code: "Code généré"

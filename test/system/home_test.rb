@@ -23,6 +23,18 @@ class UsersTest < ApplicationSystemTestCase
     assert_no_selector "[data-code-result]"
   end
 
+  test "code generation error is displayed" do
+    request_url = "https://" + ENV['KEY_CLAIM_HOST'] + "/new-key-claim";
+    stub_request(:post, request_url).
+      to_return(status: 403)
+
+    login_as_admin
+    visit root_url
+    click_on "Generate code"
+
+    assert_selector "[data-code-error]:not([data-hidden])"
+  end
+
   test "menu popover works for admins" do
     login_as_admin
     visit root_url
