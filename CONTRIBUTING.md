@@ -9,8 +9,10 @@ We’d love to get your issues (if you find any bugs) and PRs (if you have any f
 - [Contributing](#contributing)
   - [Contributing Documentation](#contributing-documentation)
   - [Contributing Code](#contributing-code)
-- [Running COVID Shield](#running-covid-shield)
-  - [From Scratch](#from-scratch)
+- [Running the COVID Shield portal](#running-covid-shield)
+  - [Prerequisites](#Prerequisites)
+  - [Running](#running)
+  - [Testing](#testing)
 
 ## Code of Conduct
 
@@ -47,15 +49,61 @@ code to your fork, then open a PR against this repository.
 
 The setup steps expect the following tools to be installed on the system:
 
-- [Ruby - 2.7.1](https://guides.rubyonrails.org/getting_started.html#installing-ruby)
-- [MySQL - 5.7](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
-- [Node.js - 12.17.0](https://guides.rubyonrails.org/getting_started.html#installing-node-js-and-yarn)
-- [Yarn - 1.22.0](https://guides.rubyonrails.org/getting_started.html#installing-node-js-and-yarn)
-- [Rails - 6.0.3](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails-installing-rails)
-- [COVID Shield Diagnosis Server](https://github.com/CovidShield/backend)
+#### 1. [Ruby - 2.7.1](https://guides.rubyonrails.org/getting_started.html#installing-ruby)
 
+You can use [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://github.com/rvm/rvm) to install the specific version you need.
+
+Example using `rvm`:
+
+```bash
+rvm install 2.7.1
+rvm use 2.7.1
+```
+
+#### 2. [MySQL - 5.7](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+
+You can use the official [MySQL installer](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/installing.html) or you can use [homebrew](https://brew.sh/).
+
+Example using `homebrew`:
+
+```bash
+brew install mysql
+brew services start mysql
+```
+
+#### 3. [Node.js - 12.17.0](https://guides.rubyonrails.org/getting_started.html#installing-node-js-and-yarn)
+
+You can use the official [Node.js installer](https://nodejs.org/en/download/) or [nvm](https://github.com/nvm-sh/nvm).
+
+Example using `nvm`:
+
+```bash
+nvm install 12.17.0
+nvm use 12.17.0
+```
+
+#### 4. [Yarn - 1.22.0](https://guides.rubyonrails.org/getting_started.html#installing-node-js-and-yarn)
+
+You can use the official installation script or [homebrew](https://brew.sh/).
+
+Example using `homebrew`:
+
+```bash
+brew install yarn
+```
+
+#### 5. [Rails - 6.0.3.1](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails-installing-rails)
+
+```bash
+gem install rails -v 6.0.3.1
+```
+
+#### 6. [COVID Shield Diagnosis Server](https://github.com/CovidShield/backend)
+
+You will need to follow the [instructions for setting up the Diagnosis Server](https://github.com/CovidShield/server/blob/master/CONTRIBUTING.md#running).
 
 ### Running
+
 #### 1. Clone the repository
 
 ```bash
@@ -67,15 +115,17 @@ git clone git@github.com:CovidShield/portal.git
 There are several environment variables you can set to configure the application.
 
 To configure these:
+
 1. Copy `config/local_env.yml.sample` to `config/local_env.yml`
 1. Open `config/local_env.yml` and edit the values as needed
 
 The available variables you can configure are:
-* `DATABASE_HOST` - The host the MySQL server is running on (defaults to `localhost`)
-* `DATABASE_USER` - The user MySQL is configured with for acces (defaults to `root`)
-* `DATABASE_PASSWORD` - The password for the MySQL user (defaults to blank)
-* `KEY_CLAIM_HOST` - The host the COVID Shield server is running on
-* `KEY_CLAIM_TOKEN` - The token the COVID Shield server is configured to use
+
+- `DATABASE_HOST` - The host the MySQL server is running on (defaults to `localhost`)
+- `DATABASE_USER` - The user MySQL is configured with for acces (defaults to `root`)
+- `DATABASE_PASSWORD` - The password for the MySQL user (defaults to blank)
+- `KEY_CLAIM_HOST` - The host the COVID Shield server is running on
+- `KEY_CLAIM_TOKEN` - The token the COVID Shield server is configured to use
 
 #### 3. Install dependencies
 
@@ -115,6 +165,7 @@ bundle exec rails test
 ```
 
 ### Running the system tests
+
 ```ruby
 bundle exec rails test:system
 ```
