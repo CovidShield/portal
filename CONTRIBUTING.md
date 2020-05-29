@@ -116,7 +116,7 @@ There are several environment variables you can set to configure the application
 
 To configure these:
 
-1. Copy `config/local_env.yml.sample` to `config/local_env.yml`
+1. `cp config/local_env.yml.sample config/local_env.yml`
 1. Open `config/local_env.yml` and edit the values as needed
 
 The available variables you can configure are:
