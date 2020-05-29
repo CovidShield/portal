@@ -39,3 +39,4 @@ config/terraform/*/terraform.tfstate*
 
 .DS_Store
 /mysql-data
+config/local_env.yml
