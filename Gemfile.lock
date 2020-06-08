@@ -162,7 +162,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.0)
-    reverse_markdown (1.4.0)
+    reverse_markdown (2.0.0)
       nokogiri
     rexml (3.2.4)
     rubocop (0.84.0)
@@ -192,7 +192,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.0)
-    solargraph (0.39.7)
+    solargraph (0.39.8)
       backport (~> 1.1)
       benchmark
       bundler (>= 1.17.2)
@@ -201,7 +201,7 @@ GEM
       maruku (~> 0.7, >= 0.7.3)
       nokogiri (~> 1.9, >= 1.9.1)
       parser (~> 2.3)
-      reverse_markdown (~> 1.0, >= 1.0.5)
+      reverse_markdown (>= 1.0.5, < 3)
       rubocop (~> 0.52)
       thor (~> 1.0)
       tilt (~> 2.0)
