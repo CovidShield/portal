@@ -37,20 +37,20 @@
                     <% if current_user.admin %>
                       <li>
                         <%= nav_item(users_path) do %>
-                          <svg class="popover__icon"><use xlink:href="#users" /></svg>
+                          <svg class="popover__icon" focusable="false" aria-hidden="true"><use xlink:href="#users" /></svg>
                           <%= t('manage_users') %>
                         <% end %>
                       </li>
                     <% end %>
                     <li>
                       <%= nav_item(edit_user_path(current_user)) do %>
-                        <svg class="popover__icon"><use xlink:href="#settings" /></svg>
+                        <svg class="popover__icon" focusable="false" aria-hidden="true"><use xlink:href="#settings" /></svg>
                         <%= t('settings.title') %>
                       <% end %>
                     </li>
                     <li>
                       <%= nav_item(logout_path) do %>
-                        <svg class="popover__icon"><use xlink:href="#logout" /></svg>
+                        <svg class="popover__icon" focusable="false" aria-hidden="true"><use xlink:href="#logout" /></svg>
                         <%= t('sign_out') %>
                       <% end %>
                     </li>
