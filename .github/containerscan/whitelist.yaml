@@ -3,6 +3,8 @@ general:
     - NSWG-ECO-516
     - CVE-2020-8130
     - CVE-2020-8165
+    - CVE-2020-7663
+    - CVE-2020-11080
     - CIS-DI-0005
     - CIS-DI-0006
     - DKL-LI-0003
