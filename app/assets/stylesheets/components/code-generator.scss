@@ -25,6 +25,12 @@
   letter-spacing: 0;
 }
 
+.code-generator__banner--error {
+  background-color: rgba($color-red, 0.1);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
 .code-generator__result {
   font-weight: normal;
 }

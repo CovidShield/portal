@@ -10,7 +10,7 @@ async function postData() {
       "Content-Type": "application/json",
     },
   });
-  return response.json();
+  return response;
 }
 
 function formatCode(code) {
@@ -25,8 +25,15 @@ export function initializeCodeGenerator() {
   const resetButton = document.querySelector("[data-reset-code]");
   const codeBanner = document.querySelector("[data-code-banner]");
   const expiredMessage = document.querySelector("[data-code-expired]");
+  const errorMessage = document.querySelector("[data-code-error]");
 
-  if (!generateButton || !resetButton || !codeBanner || !expiredMessage) {
+  if (
+    !generateButton ||
+    !resetButton ||
+    !codeBanner ||
+    !expiredMessage ||
+    !errorMessage
+  ) {
     return;
   }
 
@@ -50,27 +57,37 @@ export function initializeCodeGenerator() {
 
   generateButton.addEventListener("click", async function () {
     generateButton.disabled = true;
-    const data = await postData();
+    const response = await postData();
 
-    if (data) {
-      expiredMessage.dataset.hidden = "true";
-      emptyResult.dataset.hidden = "true";
-      delete codeBanner.dataset.hidden;
-      codeResult.innerHTML = formatCode(data.key);
-
-      generateContent.dataset.hidden = "true";
-      delete generateNewContent.dataset.hidden;
-
+    if (!response || response.status !== 200) {
+      codeBanner.dataset.hidden = "true";
+      delete errorMessage.dataset.hidden;
+      errorMessage.tabIndex = -1;
+      errorMessage.focus();
       generateButton.disabled = false;
-      resetButton.disabled = false;
-
-      window.clearTimeout(codeTimeout);
-
-      codeTimeout = window.setTimeout(() => {
-        codeBanner.dataset.hidden = "true";
-        delete expiredMessage.dataset.hidden;
-      }, CODE_TIMEOUT);
+      return;
     }
+
+    const data = await response.json();
+
+    expiredMessage.dataset.hidden = "true";
+    errorMessage.dataset.hidden = "true";
+    emptyResult.dataset.hidden = "true";
+    delete codeBanner.dataset.hidden;
+    codeResult.innerHTML = formatCode(data.key);
+
+    generateContent.dataset.hidden = "true";
+    delete generateNewContent.dataset.hidden;
+
+    generateButton.disabled = false;
+    resetButton.disabled = false;
+
+    window.clearTimeout(codeTimeout);
+
+    codeTimeout = window.setTimeout(() => {
+      codeBanner.dataset.hidden = "true";
+      delete expiredMessage.dataset.hidden;
+    }, CODE_TIMEOUT);
   });
 
   resetButton.addEventListener("click", async function () {

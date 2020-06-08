@@ -20,4 +20,14 @@ class KeysControllerTest < ActionDispatch::IntegrationTest
     post keys_generate_url format: 'json'
     assert_response :success, {key: "12345678"}
   end
+
+  test "server status code is forwarded to response" do
+    request_url = "https://" + ENV['KEY_CLAIM_HOST'] + "/new-key-claim";
+    stub_request(:post, request_url).
+      to_return(status: 403)
+
+    sign_in_as(@user)
+    post keys_generate_url format: 'json'
+    assert_response 403
+  end
 end
