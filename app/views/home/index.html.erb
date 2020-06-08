@@ -56,12 +56,12 @@
             </li>
             <li class="ordered-list__item">
               <div class="ordered-list__item-content">
-                <span><%= t('home.card3.step2') %></span>
+                <span><%= t('home.card3.step2_html') %></span>
                 <button aria-label="<%= t('more_info') %>, <%= t('home.card3.step2_modal_title') %>" class="help__activator" type="button" data-modal-activator="step2-2" aria-haspopup="dialog">
                   <svg class="icon"><use xlink:href="#question-mark" /></svg>
                 </button>
                 <%= render 'components/modal', {id: 'step2-2', title: t('home.card3.step2_modal_title')} do %>
-                  <p><%= t('home.card3.step2_modal_content') %></p>
+                  <p><%= t('home.card3.step2_modal_content_html') %></p>
                   <%= image_tag('step2.png', class: 'image', alt: t('home.card3.step2_modal_alt')) %>
                 <% end %>  
               </div>
