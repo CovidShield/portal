@@ -56,9 +56,9 @@ fr:
       title: "Fournir un code COVID Shield au patient"
       subheading: "Demandez au patient de :"
       step1: "Appuyer sur l'icône pour ouvrir l'application COVID Shield."
-      step2_html: "Appuyer sur la section blanche au bas de l'écran."
+      step2_html: 'Appuyer sur le <span class="visually-hidden">bouton de la</span> <span aria-hidden="true">section du</span> statut de COVID Shield au bas de l’écran.'
       step2_modal_title: "Étape 2"
-      step2_modal_content_html: "Appuyer sur la section blanche au bas de l'écran."
+      step2_modal_content_html: 'Appuyer sur le <span class="visually-hidden">bouton de la</span> <span aria-hidden="true">section du</span> statut de COVID Shield au bas de l’écran.'
       step2_modal_alt: "Capture d'écran de l'application mobile COVID Shield avec la section blanche au bas de l'écran encadrée"
       step3_html: "Appuyer sur le bouton <strong>Entrez le code</strong>."
       step3_modal_title: "Étape 3"
