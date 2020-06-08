@@ -45,6 +45,24 @@ code to your fork, then open a PR against this repository.
 
 ## Running the COVID Shield portal
 
+### Deployment
+
+#### Docker Container
+
+The [covidshield/portal](https://hub.docker.com/r/covidshield/portal) container on dockerhub cannot be used as is. In order to deploy it successfully you either have to:
+
+* Create your own container (the container on dockerhub can be used as a base layer) and replace the `config/credentials.yml.enc` file with your own.
+* Use the dockerhub container, and use a volume mount when deploying to provide your own `credentials.yml.enc` file. In this case, be sure to set the `RAILS_CREDENTIALS_PATH` environment variable.
+
+#### Environment Variables
+
+* Required
+  * `RAILS_MASTER_KEY` - The encryption key used to decrypt your encrypted credentials file (e.g. `config/credentials.yml.enc`).
+  * `DATABASE_URL` - The string used to connect to the MySQL database (e.g. `mysql2://myuser:mypass@localhost/somedatabase`).
+  * `RAILS_ENV` - The Rails environment to use. Should always be set to `production` (even in docker-compose).
+* Optional
+  * `RAILS_CREDENTIALS_PATH` - Overrides the default encrypted credentials path. Set this if you're providing your own file at the non-standard location (i.e. `config/credentials.yml.enc`).
+
 ### Prerequisites
 
 The setup steps expect the following tools to be installed on the system:
