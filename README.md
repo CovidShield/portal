@@ -1,6 +1,8 @@
 # COVID Shield Web Portal
 
-![Master Docker build, tag, and push to Amazon ECR](https://github.com/CovidShield/portal/workflows/Master%20Docker%20build,%20tag,%20and%20push%20to%20Amazon%20ECR/badge.svg)
+![Master Dockerhub container build status](https://github.com/CovidShield/portal/workflows/Dockerhub%20Container%20Builds/badge.svg)
+![Master Terraform status](https://github.com/CovidShield/portal/workflows/Terraform/badge.svg)
+![Master tests status](https://github.com/CovidShield/portal/workflows/Tests/badge.svg)
 
 This web-based results portal is accessible only by healthcare professionals and can be deployed federally, provincially, or municipally. It provides unique temporary codes to healthcare professionals who then give those codes to users of the mobile app. This code gives the app access to upload their anonymized device identifiers. There is no association between these temporary codes and specific tests or individuals. The code is delivered over the phone so it cannot be traced to any individual or their test results.
 
