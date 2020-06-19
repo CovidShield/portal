@@ -140,7 +140,7 @@ To configure these:
 The available variables you can configure are:
 
 - `DATABASE_HOST` - The host the MySQL server is running on (defaults to `localhost`)
-- `DATABASE_USER` - The user MySQL is configured with for acces (defaults to `root`)
+- `DATABASE_USER` - The user MySQL is configured with for access (defaults to `root`)
 - `DATABASE_PASSWORD` - The password for the MySQL user (defaults to blank)
 - `KEY_CLAIM_HOST` - The host the COVID Shield server is running on
 - `KEY_CLAIM_TOKEN` - The token the COVID Shield server is configured to use
