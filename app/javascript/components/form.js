@@ -2,11 +2,11 @@ function initializeForms() {
   const dirtyForms = document.querySelectorAll("[data-disabled-until-dirty]");
 
   dirtyForms.forEach((form) => {
-    const submitButon = form.querySelector("[data-submit]");
-    submitButon.disabled = true;
+    const submitButton = form.querySelector("[data-submit]");
+    submitButton.disabled = true;
 
     form.addEventListener("change", function () {
-      submitButon.disabled = false;
+      submitButton.disabled = false;
     });
   });
 }
