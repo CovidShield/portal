@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="grid">
         <div class="grid__item grid__item--half">
           <div class="<%= text_field_classes(user.errors[:password]) %>">
@@ -64,11 +64,23 @@
       <%  if current_user.admin %>
         <div class="grid">
           <div class="grid__item grid__item--half">
-            <%= form.label :admin, t('user_form.permissions_label'), class: 'select__label' %>
-            <%= form.select(:admin, [[t('staff'), false], [t('admin'), true]], {}, class: 'select') %>
+            <div class="<%= select_classes(user.errors[:admin]) %>">
+              <%= form.label :admin, t('user_form.permissions_label'), class: 'select__label' %>
+              <%= form.select :admin,
+                [[t('staff'), false], [t('admin'), true]], {},
+                class: 'select',
+                'aria-describedby': (user.errors[:admin].any? ? 'admin-error' : nil),
+                'aria-invalid': (user.errors[:admin].any? ? true : nil)
+              %>
+              <% if user.errors[:admin].any? %>
+                <small id="admin-error" class="text-field__error-message">
+                  <%= user.errors[:admin].join(',') %>
+                </small>
+              <% end %>
+            </div>
           </div>
         </div>
-      <% end %>    
+      <% end %>
     </div>
     <div class="card__footer">
       <div class="card__footer-actions">
