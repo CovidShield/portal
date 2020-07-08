@@ -75,6 +75,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to users_url
   end
 
+  test "admin cannot mark as staff if they are the only admin" do
+    sign_in_as(@admin)
+    assert_equal(1, User.where(admin: true).count)
+    patch user_url(@admin), params: { user: { admin: false } }
+    @admin.reload
+    assert @admin.admin
+  end
+
   test "staff should not be able to update user" do
     sign_in_as(@staff)
     patch user_url(@bob), params: { user: { id: @bob.id, username: @bob.username } }
@@ -87,7 +95,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     @staff.reload
     assert_equal 'staff2', @staff.username
-    
+
     assert_redirected_to root_url
   end
 

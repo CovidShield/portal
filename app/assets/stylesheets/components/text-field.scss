@@ -30,6 +30,16 @@
   }
 }
 
+.select-form--error {
+  .select__label {
+    color: $color-red;
+  }
+
+  .select {
+    border-color: $color-red;
+  }
+}
+
 .text-field__error-message {
   color: $color-red;
   margin-top: $spacing-tight;

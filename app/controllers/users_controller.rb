@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     else
       @page_title = "#{I18n.t('settings.title')} | #{I18n.t('title')}"
     end
-    
+
 
     if !current_user.admin && current_user != @user
       redirect_to root_path

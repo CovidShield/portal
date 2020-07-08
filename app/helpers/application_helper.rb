@@ -16,4 +16,14 @@ module ApplicationHelper
 
     classnames.join(' ')
   end
+
+  def select_classes(errors)
+    classnames = ['select-form']
+
+    if errors.any?
+      classnames.push('select-form--error')
+    end
+
+    classnames.join(' ')
+  end
 end
