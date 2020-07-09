@@ -7,7 +7,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @bob = users(:bob)
   end
 
-  test "index can bew viewed by admin" do
+  test "index can be viewed by admin" do
     sign_in_as(@admin)
     get users_url
     assert_response :success
